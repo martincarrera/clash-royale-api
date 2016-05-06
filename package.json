@@ -1,0 +1,17 @@
+{
+  "name": "clash-royale-api",
+  "main": "index.js",
+  "license": "SEE LICENSE IN LICENSE file",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martincarrera/clash-royale-api.git"
+  },
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "lodash": "^4.6.1",
+    "mongoose": "^4.4.7",
+    "morgan": "^1.7.0"
+  }
+}
