@@ -9,6 +9,7 @@ import morgan from 'morgan';
 import routes from './routes';
 import middlewares from './middlewares';
 
+const port = config.PORT;
 const app = express();
 
 require('./libraries/promisify-all')(['mongoose']);
@@ -19,7 +20,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
-app.use(middlewares.cors);
+// @TODO: fix middlewares.cors call, default shouldn't be needed
+app.use(middlewares.cors.default);
+
+app.listen(port, () => {
+  console.log(`Magic happens on port ${port}`); // eslint-disable-line no-console
+});
+
 app.use('/api', routes);
 
 export default app;

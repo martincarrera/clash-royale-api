@@ -1,16 +1,16 @@
 const router = require('express').Router(); // eslint-disable-line new-cap
 
-import controllers from './controllers';
+import chest from './controllers/chest-controller';
 
 router.route('/chests')
-  .get(controllers.chest.find.bind(controllers.chest))
-  .post(controllers.chest.create.bind(controllers.chest))
-  .put(controllers.chest.update.bind(controllers.chest))
-  .delete(controllers.chest.remove.bind(controllers.chest));
+  .get(chest.find.bind(chest))
+  .post(chest.create.bind(chest))
+  .put(chest.update.bind(chest))
+  .delete(chest.remove.bind(chest));
 
 router.route('/chests/:id')
-  .get(controllers.chest.findById.bind(controllers.chest))
-  .put(controllers.chest.update.bind(controllers.chest))
-  .delete(controllers.chest.remove.bind(controllers.chest));
+  .get(chest.findById.bind(chest))
+  .put(chest.update.bind(chest))
+  .delete(chest.remove.bind(chest));
 
 export default router;
