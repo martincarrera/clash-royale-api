@@ -1,29 +1,25 @@
-'use strict';
+import config from './config/config';
 
-var config = require('./config/config');
+import express from 'express';
+import mongoose from 'mongoose';
 
-var express = require('express');
-var app = express();
+import bodyParser from 'body-parser';
+import morgan from 'morgan';
 
-var bodyParser = require('body-parser');
-var morgan = require('morgan');
+import routes from './routes';
+import middlewares from './middlewares';
 
-var routes = require('./routes');
-var middlewares = require('./middlewares');
+const app = express();
 
-module.exports = server;
+require('./libraries/promisify-all')(['mongoose']);
 
-function server(mongoose) {
-  require('./libraries/promisify-all')(['mongoose']);
+mongoose.connect(config.MONGODB_URL);
 
-  mongoose.connect(config.MONGODB_URL);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(morgan('tiny'));
 
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(bodyParser.json());
-  app.use(morgan('tiny'));
+app.use(middlewares.cors);
+app.use('/api', routes);
 
-  app.use(middlewares.cors);
-  app.use('/api', routes);
-
-  return app;
-}
+export default app;

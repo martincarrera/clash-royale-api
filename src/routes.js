@@ -1,8 +1,6 @@
-'use strict';
+const router = require('express').Router(); // eslint-disable-line new-cap
 
-var router = require('express').Router(); // eslint-disable-line new-cap
-
-var controllers = require('./controllers');
+import controllers from './controllers';
 
 router.route('/chests')
   .get(controllers.chest.find.bind(controllers.chest))
@@ -15,4 +13,4 @@ router.route('/chests/:id')
   .put(controllers.chest.update.bind(controllers.chest))
   .delete(controllers.chest.remove.bind(controllers.chest));
 
-  module.exports = router;
+export default router;

@@ -1,24 +1,21 @@
-'use strict';
+import { readdirSync } from 'fs';
+import { camelCase } from 'lodash';
 
-var fs = require('fs');
-var _ = require('lodash');
-
-module.exports = function (path, options) {
+export default (path, options) => {
   const opt = options || {};
-  var modules = {};
-  var files = fs.readdirSync(path);
+  const modules = {};
+  const files = readdirSync(path);
 
   files.forEach(file => {
     if (/\.js$/.test(file) && file !== 'index.js') {
-      var name = file;
-
+      let name = file;
       if (opt.stripFromName) {
         name = name.replace(opt.stripFromName, '');
       }
-
-      name = _.camelCase(name.replace(/\.js/, ''));
-
-      modules[name] = require(path + '/' + file);
+      name = camelCase(name.replace(/\.js/, ''));
+      // @TODO: import es6 way, I don't know how to at the moment,
+      // System.import doesn't seem to work
+      modules[name] = require(`${path}/${file}`);
     }
   });
 

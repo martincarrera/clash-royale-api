@@ -1,13 +1,11 @@
-'use strict';
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
-var ChestSchema = new Schema({
+const ChestSchema = new Schema({
 
   name: {
     unique: true,
-    type: String
+    type: String,
   },
 
   minRare: [{ type: Number }],
@@ -16,8 +14,8 @@ var ChestSchema = new Schema({
 
   minGold: [{ type: Number }],
 
-  maxGold: [{ type: Number }]
+  maxGold: [{ type: Number }],
 
 });
 
-module.exports = mongoose.model('Chest', ChestSchema);
+export default mongoose.model('Chest', ChestSchema);

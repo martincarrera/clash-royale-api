@@ -1,10 +1,8 @@
-'use strict';
+import { each } from 'lodash';
+import { promisifyAll } from 'bluebird';
 
-var _ = require('lodash');
-var Promise = require('bluebird');
-
-module.exports = function (modules) {
-  _.each(modules, module => {
-    Promise.promisifyAll(require(module));
+module.exports = modules => {
+  each(modules, module => {
+    promisifyAll(require(module));
   });
 };
