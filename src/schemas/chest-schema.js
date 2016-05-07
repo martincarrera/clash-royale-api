@@ -7,8 +7,16 @@ var ChestSchema = new Schema({
 
   name: {
     unique: true,
-    type: String,
-  }
+    type: String
+  },
+
+  minRare: [{ type: Number }],
+
+  minEpic: [{ type: Number }],
+
+  minGold: [{ type: Number }],
+
+  maxGold: [{ type: Number }]
 
 });
 
