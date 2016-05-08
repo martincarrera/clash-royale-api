@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const numberOfArenas = 7;
+const gemsPerMinute = 0.1;
 
 const ChestSchema = new Schema({
 
@@ -10,6 +11,8 @@ const ChestSchema = new Schema({
     type: String,
   },
 
+  numberOfCards: { type: Number },
+
   minRare: [{ type: Number }],
 
   minEpic: [{ type: Number }],
@@ -17,6 +20,12 @@ const ChestSchema = new Schema({
   minGold: [{ type: Number }],
 
   maxGold: [{ type: Number }],
+
+  unlockTime: { type: Number },
+
+  unlockGemCost: { type: Number },
+
+  gemCost: { type: Number },
 
 });
 
@@ -33,6 +42,9 @@ ChestSchema.pre('save', function preSave(next) {
   }
   if (this.maxGold.length === 0) {
     this.maxGold = Array(numberOfArenas).fill(0);
+  }
+  if (!this.unlockGemCost) {
+    this.unlockGemCost = this.unlockTime * gemsPerMinute;
   }
   next();
 });
