@@ -20,6 +20,7 @@ const ChestSchema = new Schema({
 
 });
 
+// @TODO Change function to arrow function.
 ChestSchema.pre('save', function preSave(next) {
   if (this.minRare.length === 0) {
     this.minRare = Array(numberOfArenas).fill(0);
