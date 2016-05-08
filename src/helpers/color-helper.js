@@ -1,5 +1,5 @@
-module.exports = {
+export default {
   randomColor() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16);
-  }
+    return '#'.concat(Math.floor(Math.random() * 16777215).toString(16));
+  },
 };

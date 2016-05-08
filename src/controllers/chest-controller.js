@@ -1,12 +1,6 @@
-'use strict';
+import Controller from '../libraries/controller';
+import ChestModel from '../models/chest-model';
 
-var Controller = require('../libraries/controller');
-var ChestModel = require('../models/chest-model');
+class ChestController extends Controller {}
 
-class ChestController extends Controller {
-  constructor(Model) {
-    super(Model);
-  }
-}
-
-module.exports = new ChestController(ChestModel);
+export default new ChestController(ChestModel);

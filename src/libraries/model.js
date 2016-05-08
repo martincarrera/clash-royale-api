@@ -1,56 +1,42 @@
-'use strict';
-
-class Model {
+export default class Model {
 
   constructor(SchemaModel) {
     this.SchemaModel = SchemaModel;
   }
 
   create(input) {
-    var newSchemaModel = new this.SchemaModel(input);
+    const newSchemaModel = new this.SchemaModel(input);
     return newSchemaModel.saveAsync();
   }
 
   update(id, updatedModel) {
-    if (!id) {
-      throw new Error('Missing id parametter');
-    }
-
+    if (!id) throw new Error('Missing id parametter');
     return this.SchemaModel.findByIdAndUpdate(id, updatedModel, { new: true })
       .execAsync();
   }
 
-  find(query, relationships) {
+  find(query) {
     return this.SchemaModel.find(query)
-      .populate(relationships || '')
       .execAsync();
   }
 
-  findOne(query, relationships) {
+  findOne(query, populate) {
     return this.SchemaModel.findOne(query)
-      .populate(relationships || '')
+      .populate(populate || '')
       .execAsync();
   }
 
-  findById(id, relationships) {
-    if (!id) {
-      throw new Error('Missing id parametter');
-    }
-
+  findById(id, populate) {
+    if (!id) throw new Error('Missing id parametter');
     return this.SchemaModel
       .findById(id)
-      .populate(relationships || '')
+      .populate(populate || '')
       .execAsync();
   }
 
   remove(id) {
-    if (!id) {
-      throw new Error('Missing id parametter');
-    }
-
+    if (!id) throw new Error('Missing id parametter');
     return this.SchemaModel.findByIdAndRemove(id)
       .execAsync();
   }
 }
-
-module.exports = Model;

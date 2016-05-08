@@ -1,5 +1,2 @@
-'use strict';
-
-module.exports = require('../libraries/requiere-all')(__dirname, {
-  stripFromName: '-controller'
-});
+import requiereAll from '../libraries/requiere-all';
+export default requiereAll(__dirname, { stripFromName: '-controller' });
