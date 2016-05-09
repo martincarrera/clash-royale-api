@@ -22,12 +22,12 @@ const ArenaSchema = new Schema({
 
   chests: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Chest'
+    ref: 'Chest',
   }],
 
   // @TODO: Change this when cards model is added.
   cardUnlocks: [{
-    type: "String",
+    type: 'String',
   }],
 
 });
