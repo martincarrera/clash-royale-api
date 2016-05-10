@@ -15,7 +15,7 @@ export default (path, options) => {
       name = camelCase(name.replace(/\.js/, ''));
       // @TODO: import es6 way, I don't know how to at the moment,
       // System.import doesn't seem to work
-      modules[name] = require(`${path}/${file}`);
+      modules[name] = require(`${path}/${file}`); // eslint-disable-line global-require, max-len
     }
   });
 

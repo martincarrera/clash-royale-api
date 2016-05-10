@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const ArenaSchema = new Schema({
 
-  number: { type: Number },
+  number: {
+    unique: true,
+    type: Number,
+  },
 
   name: {
     unique: true,
@@ -11,6 +14,8 @@ const ArenaSchema = new Schema({
   },
 
   victoryGold: { type: Number },
+
+  minTrophies: { type: Number },
 
   clanRequestCommon: { type: Number },
 
