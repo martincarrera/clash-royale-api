@@ -9,7 +9,7 @@ const ChestSchema = new Schema({
 
   arena: { type: Number, default: 0 },
 
-  numberOfCards: { type: Number},
+  numberOfCards: { type: Number },
 
   minRare: { type: Number, default: 0 },
 
@@ -27,7 +27,7 @@ const ChestSchema = new Schema({
 
 });
 
-ChestSchema.index( { name: 1, arena: 1}, {unique: true});
+ChestSchema.index({ name: 1, arena: 1 }, { unique: true });
 
 // @TODO Change function to arrow function.
 ChestSchema.pre('save', function preSave(next) {
