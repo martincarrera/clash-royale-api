@@ -5,10 +5,7 @@ const gemsPerMinute = 0.1;
 
 const ChestSchema = new Schema({
 
-  name: {
-    unique: true,
-    type: String,
-  },
+  name: { type: String },
 
   arena: { type: Number, default: 0 },
 
