@@ -9,15 +9,15 @@ const ChestSchema = new Schema({
 
   arena: { type: Number, default: 0 },
 
-  numberOfCards: { type: Number, default: 0 },
+  numberOfCards: { type: Number},
 
   minRare: { type: Number, default: 0 },
 
   minEpic: { type: Number, default: 0 },
 
-  minGold: { type: Number, default: 0 },
+  minGold: { type: Number },
 
-  maxGold: { type: Number, default: 0 },
+  maxGold: { type: Number },
 
   gemCost: { type: Number, default: 0 },
 
@@ -26,6 +26,8 @@ const ChestSchema = new Schema({
   unlockGemCost: { type: Number },
 
 });
+
+ChestSchema.index( { name: 1, arena: 1}, {unique: true});
 
 // @TODO Change function to arrow function.
 ChestSchema.pre('save', function preSave(next) {
