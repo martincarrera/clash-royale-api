@@ -6,24 +6,44 @@ const ArenaSchema = new Schema({
   number: {
     unique: true,
     type: Number,
+    require: true,
   },
 
   name: {
     unique: true,
     type: String,
+    require: true,
   },
 
-  victoryGold: { type: Number },
+  victoryGold: {
+    type: Number,
+    require: true,
+  },
 
-  minTrophies: { type: Number },
+  minTrophies: {
+    type: Number,
+    require: true,
+  },
 
-  clanRequestCommon: { type: Number },
+  clanRequestCommon: {
+    type: Number,
+    require: true,
+  },
 
-  clanRequestRare: { type: Number },
+  clanRequestRare: {
+    type: Number,
+    require: true,
+  },
 
-  clanDonateCommon: { type: Number },
+  clanDonateCommon: {
+    type: Number,
+    require: true,
+  },
 
-  clanDonateRare: { type: Number },
+  clanDonateRare: {
+    type: Number,
+    require: true,
+  },
 
   chests: [{
     type: mongoose.Schema.Types.ObjectId,

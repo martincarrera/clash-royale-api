@@ -5,25 +5,58 @@ const gemsPerMinute = 0.1;
 
 const ChestSchema = new Schema({
 
-  name: { type: String },
+  name: {
+    type: String,
+    require: true,
+  },
 
-  arena: { type: Number, default: 0 },
+  arena: {
+    type: Number,
+    default: 0,
+    require: true,
+  },
 
-  numberOfCards: { type: Number },
+  numberOfCards: {
+    type: Number,
+    require: true,
+  },
 
-  minRare: { type: Number, default: 0 },
+  minRare: {
+    type: Number,
+    default: 0,
+    require: true,
+  },
 
-  minEpic: { type: Number, default: 0 },
+  minEpic: {
+    type: Number,
+    default: 0,
+    require: true,
+  },
 
-  minGold: { type: Number },
+  minGold: {
+    type: Number,
+    require: true,
+  },
 
-  maxGold: { type: Number },
+  maxGold: {
+    type: Number,
+    require: true,
+  },
 
-  gemCost: { type: Number, default: 0 },
+  gemCost: {
+    type: Number,
+    default: 0,
+    require: true,
+  },
 
-  unlockTime: { type: Number },
+  unlockTime: {
+    type: Number,
+    require: true,
+  },
 
-  unlockGemCost: { type: Number },
+  unlockGemCost: {
+    type: Number,
+  },
 
 });
 

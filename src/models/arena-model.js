@@ -11,8 +11,10 @@ class ArenaModel extends Model {
     const cardPromise = CardModel.find({ unlockedInArena: newSchemaModel.number });
     return Promise.all([chestPromise, cardPromise])
       .then(response => {
-        newSchemaModel.chests = response[0].map(chest => chest._id); // eslint-disable-line no-underscore-dangle, max-len
-        newSchemaModel.cardUnlocks = response[1].map(card => card._id); // eslint-disable-line no-underscore-dangle, max-len
+        /* eslint-disable no-underscore-dangle */
+        newSchemaModel.chests = response[0].map(chest => chest._id);
+        newSchemaModel.cardUnlocks = response[1].map(card => card._id);
+        /* eslint-enable no-underscore-dangle */
         return newSchemaModel.saveAsync();
       });
   }
