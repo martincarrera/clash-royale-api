@@ -27,6 +27,6 @@ app.listen(port, () => {
   console.log(`Magic happens on port ${port}`); // eslint-disable-line no-console
 });
 
-app.use('/api', routes);
+app.use('/', routes);
 
 export default app;
