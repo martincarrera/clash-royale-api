@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
-import routes from './routes';
+import routes from './router';
 import middlewares from './middlewares';
 
 const port = config.PORT;
