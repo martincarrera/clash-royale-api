@@ -1,4 +1,5 @@
-const router = require('express').Router(); // eslint-disable-line new-cap
+const Router = require('express').Router;
+const router = new Router();
 
 import chest from './controllers/chest-controller';
 import arena from './controllers/arena-controller';
