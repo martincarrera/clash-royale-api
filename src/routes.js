@@ -6,9 +6,9 @@ import router from './routers/router';
 
 module.exports = (req, res, next) => {
   req.app.use('/', router);
-  req.app.use('/api', arenaRouter);
-  req.app.use('/api', cardRouter);
-  req.app.use('/api', chestRouter);
-  req.app.use('/api', playerRouter);
+  req.app.use('/api/arenas', arenaRouter);
+  req.app.use('/api/cards', cardRouter);
+  req.app.use('/api/chests', chestRouter);
+  req.app.use('/api/players', playerRouter);
   next();
 };
