@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
-import routes from './routes';
+import routes from './router';
 import middlewares from './middlewares';
 
 const port = config.PORT;
@@ -27,6 +27,6 @@ app.listen(port, () => {
   console.log(`Magic happens on port ${port}`); // eslint-disable-line no-console
 });
 
-app.use('/api', routes);
+app.use('/', routes);
 
 export default app;
