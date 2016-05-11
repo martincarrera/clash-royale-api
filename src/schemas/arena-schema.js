@@ -30,9 +30,9 @@ const ArenaSchema = new Schema({
     ref: 'Chest',
   }],
 
-  // @TODO: Change this when cards model is added.
   cardUnlocks: [{
-    type: 'String',
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Card',
   }],
 
 });
