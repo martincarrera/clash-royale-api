@@ -25,24 +25,15 @@ const ArenaSchema = new Schema({
     require: true,
   },
 
-  clanRequestCommon: {
-    type: Number,
-    require: true,
-  },
-
-  clanRequestRare: {
-    type: Number,
-    require: true,
-  },
-
-  clanDonateCommon: {
-    type: Number,
-    require: true,
-  },
-
-  clanDonateRare: {
-    type: Number,
-    require: true,
+  clan: {
+    request: {
+      common: { type: Number, require: true },
+      rare: { type: Number, require: true },
+    },
+    donate: {
+      common: { type: Number, require: true },
+      rare: { type: Number, require: true },
+    },
   },
 
   chests: [{

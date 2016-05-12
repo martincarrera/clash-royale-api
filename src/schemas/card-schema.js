@@ -26,7 +26,7 @@ const CardSchema = new Schema({
     require: true,
   },
 
-  unlockedInArena: {
+  arena: {
     type: Number,
     require: true,
   },

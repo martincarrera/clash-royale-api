@@ -8,7 +8,7 @@ class ArenaModel extends Model {
   create(input) {
     const newSchemaModel = new this.SchemaModel(input);
     const chestPromise = ChestModel.find({ arena: newSchemaModel.number });
-    const cardPromise = CardModel.find({ unlockedInArena: newSchemaModel.number });
+    const cardPromise = CardModel.find({ arena: newSchemaModel.number });
     return Promise.all([chestPromise, cardPromise])
       .then(response => {
         /* eslint-disable no-underscore-dangle */
