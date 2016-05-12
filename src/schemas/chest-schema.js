@@ -7,6 +7,10 @@ const ChestSchema = new Schema({
 
   name: {
     type: String,
+    enum: [
+      'Wooden Chest', 'Silver Chest', 'Golden Chest', 'Crown Chest',
+      'Magical Chest', 'Giant Chest', 'Super Magical Chest',
+    ],
     require: true,
   },
 
@@ -16,31 +20,15 @@ const ChestSchema = new Schema({
     require: true,
   },
 
-  numberOfCards: {
-    type: Number,
-    require: true,
+  cards: {
+    number: { type: Number, require: true },
+    minRare: { type: Number, default: 0, require: true },
+    minEpic: { type: Number, default: 0, require: true },
   },
 
-  minRare: {
-    type: Number,
-    default: 0,
-    require: true,
-  },
-
-  minEpic: {
-    type: Number,
-    default: 0,
-    require: true,
-  },
-
-  minGold: {
-    type: Number,
-    require: true,
-  },
-
-  maxGold: {
-    type: Number,
-    require: true,
+  gold: {
+    min: { type: Number, require: true },
+    max: { type: Number, require: true },
   },
 
   gemCost: {
@@ -49,13 +37,9 @@ const ChestSchema = new Schema({
     require: true,
   },
 
-  unlockTime: {
-    type: Number,
-    require: true,
-  },
-
-  unlockGemCost: {
-    type: Number,
+  unlock: {
+    time: { type: Number, require: true },
+    gemCost: { type: Number },
   },
 
 });
@@ -64,8 +48,8 @@ ChestSchema.index({ name: 1, arena: 1 }, { unique: true });
 
 // @TODO Change function to arrow function.
 ChestSchema.pre('save', function preSave(next) {
-  if (!this.unlockGemCost) {
-    this.unlockGemCost = this.unlockTime * gemsPerMinute;
+  if (!this.unlock.gemCost) {
+    this.unlock.gemCost = this.unlock.time * gemsPerMinute;
   }
   next();
 });
