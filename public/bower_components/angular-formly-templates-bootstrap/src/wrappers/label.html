@@ -1,0 +1,7 @@
+<div>
+  <label for="{{id}}" class="control-label {{to.labelSrOnly ? 'sr-only' : ''}}" ng-if="to.label">
+    {{to.label}}
+    {{to.required ? '*' : ''}}
+  </label>
+  <formly-transclude></formly-transclude>
+</div>

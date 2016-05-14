@@ -1,0 +1,75 @@
+{
+  "name": "angular-formly-templates-bootstrap",
+  "version": "6.3.2",
+  "author": "Astrism <astrisms@gmail.com>",
+  "contributors": [
+    "Astrism <astrisms@gmail.com>",
+    "Kent C. Dodds <kent@doddsfamily.us>"
+  ],
+  "homepage": "http://formly-js.github.io/angular-formly-templates-bootstrap/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/formly-js/angular-formly-templates-bootstrap.git"
+  },
+  "main": "dist/angular-formly-templates-bootstrap.js",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/formly-js/angular-formly-templates-bootstrap/master/LICENSE"
+    }
+  ],
+  "scripts": {
+    "commit": "git-cz",
+    "build:dev": "NODE_ENV=development webpack --config node_modules/kcd-common-tools/shared/webpack.config.js --progress --colors",
+    "build:prod": "NODE_ENV=production webpack --config node_modules/kcd-common-tools/shared/webpack.config.js --progress --colors",
+    "build": "npm run build:dev; npm run build:prod",
+    "test": "echo 'Still need to set these up...'",
+    "watch": "webpack --watch",
+    "start": "npm run watch",
+    "meteor": "gulp meteor",
+    "prepublish": "npm run build && npm run meteor",
+    "postpublish": "publish-latest --user-email kent+formly-bot@doddsfamily.us --user-name formly-bot",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "description": "Angular-Formly plugin which outputs bootstrap compatible form fields.",
+  "peerDependencies": {
+    "angular": "^1.2.x || >= 1.4.0-beta.0 || >= 1.5.0-beta.0",
+    "angular-formly": ">=6.20.0",
+    "api-check": ">=7.5.0",
+    "bootstrap": "^3.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "5.8.25",
+    "babel-loader": "5.3.2",
+    "commitizen": "1.0.5",
+    "cz-conventional-changelog": "1.1.2",
+    "deep-extend": "0.4.0",
+    "ghooks": "0.3.2",
+    "gulp": "3.9.0",
+    "gulp-replace": "0.5.4",
+    "jshint": "2.8.0",
+    "jshint-loader": "0.8.3",
+    "kcd-common-tools": "1.0.0-beta.23",
+    "lodash-node": "3.10.1",
+    "ng-annotate": "1.0.2",
+    "ng-annotate-loader": "0.0.10",
+    "node-libs-browser": "0.5.3",
+    "publish-latest": "1.1.2",
+    "raw-loader": "0.5.1",
+    "semantic-release": "4.3.5",
+    "validate-commit-msg": "1.0.0",
+    "webpack": "1.12.2"
+  },
+  "license": "MIT",
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "./node_modules/.bin/validate-commit-msg"
+    }
+  },
+  "kcdCommon": {
+    "webpack": "scripts/webpack-overrides.js"
+  }
+}
