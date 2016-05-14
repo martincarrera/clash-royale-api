@@ -1,0 +1,24 @@
+{
+  "name": "clash-royale-api",
+  "main": [
+    "/dist/clash-royale-api.min.js",
+    "/dist/clash-royale-api.min.css"
+  ],
+  "version": "0.0.0",
+  "description": "Clash Royale API",
+  "authors": [
+    "martincarrera"
+  ],
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "gulpfile.js",
+    "node_modules",
+    "bower_components",
+    "src"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest"
+  }
+}
