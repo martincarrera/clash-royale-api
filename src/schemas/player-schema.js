@@ -23,6 +23,11 @@ const PlayerSchema = new Schema({
     hitSpeed: { type: Number, require: true },
   },
 
+  maxExp: {
+    type: Number,
+    require: true,
+  },
+
 });
 
 export default mongoose.model('Player', PlayerSchema);
