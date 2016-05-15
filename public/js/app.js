@@ -1,3 +1,1 @@
-angular.module('clash-royale-api', [
-  'ngRoute',
-]);
+angular.module('clash-royale-api', ['ngRoute', 'formly', 'formlyBootstrap']);
