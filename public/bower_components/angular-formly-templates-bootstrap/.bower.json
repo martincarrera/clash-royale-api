@@ -45,6 +45,5 @@
   },
   "_source": "https://github.com/formly-js/angular-formly-templates-bootstrap.git",
   "_target": "^6.3.2",
-  "_originalSource": "angular-formly-templates-bootstrap",
-  "_direct": true
+  "_originalSource": "angular-formly-templates-bootstrap"
 }
