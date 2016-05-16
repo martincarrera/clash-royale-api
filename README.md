@@ -1,6 +1,7 @@
 # Clash Royale API
 A [Clash Royale](https://clashroyale.com/) API that provides information about the cards, arenas, chests, and all the relative information about the game.
 
+
 ### Install
 ```
 $ git clone https://github.com/martincarrera/clash-royale-api.git
