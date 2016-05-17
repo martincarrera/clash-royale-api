@@ -4,22 +4,22 @@ angular.module('clash-royale-api')
     $stateProvider
       .state('arenas', {
         url: '/arenas',
-        templateUrl: '../views/arenas.html',
+        templateUrl: '../views/genericTemplate.html',
         controller: 'ArenasController as vm'
       })
       .state('cards', {
         url: '/cards',
-        templateUrl: '../views/cards.html',
+        templateUrl: '../views/genericTemplate.html',
         controller: 'CardsController as vm'
       })
       .state('chests', {
         url: '/chests',
-        templateUrl: '../views/chests.html',
+        templateUrl: '../views/genericTemplate.html',
         controller: 'ChestsController as vm'
       })
       .state('players', {
         url: '/players',
-        templateUrl: '../views/players.html',
+        templateUrl: '../views/genericTemplate.html',
         controller: 'PlayersController as vm'
       })
       .state('about', {

@@ -1,4 +1,4 @@
-angular.module('PlayersService', []).factory('Players', function($http) {
+angular.module('clash-royale-api').factory('PlayersService', function($http) {
 
     return {
         get : function() {

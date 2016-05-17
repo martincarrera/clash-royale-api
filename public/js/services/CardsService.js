@@ -1,4 +1,4 @@
-angular.module('CardsService', []).factory('Cards', function($http) {
+angular.module('clash-royale-api').factory('CardsService', function($http) {
 
     return {
         get : function() {
