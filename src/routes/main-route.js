@@ -1,11 +1,10 @@
-const express = require('express');
-const Router = express.Router;
+const Router = require('express').Router;
 const router = new Router();
-import path from 'path';
 
 router.get('/', (req, res) => {
-  res.app.use(express.static(path.join(__dirname, '../../public')));
-  res.sendFile(path.join(__dirname, '../../public', 'index.html'));
+  res.json({
+    message: 'Welcome to Clash Royale API!',
+  });
 });
 
 export default router;
