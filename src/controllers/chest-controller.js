@@ -1,6 +1,6 @@
-import Controller from '../libraries/controller';
-import ChestModel from '../models/chest-model';
+const Controller = require('../libraries/controller');
+const ChestModel = require('../models/chest-model');
 
 class ChestController extends Controller {}
 
-export default new ChestController(ChestModel);
+module.exports = new ChestController(ChestModel);

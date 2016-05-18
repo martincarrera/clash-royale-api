@@ -1,6 +1,6 @@
-import Controller from '../libraries/controller';
-import PlayerModel from '../models/player-model';
+const Controller = require('../libraries/controller');
+const PlayerModel = require('../models/player-model');
 
 class PlayerController extends Controller {}
 
-export default new PlayerController(PlayerModel);
+module.exports = new PlayerController(PlayerModel);

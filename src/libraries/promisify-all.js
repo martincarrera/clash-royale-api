@@ -1,10 +1,8 @@
-import { each } from 'lodash';
-import { promisifyAll } from 'bluebird';
+const _ = require('lodash');
+const Promise = require('bluebird');
 
 module.exports = modules => {
-  each(modules, module => {
-    // @TODO: import es6 way, I don't know how to at the moment,
-    // System.import doesn't seem to work
-    promisifyAll(require(module)); // eslint-disable-line global-require
+  _.each(modules, module => {
+    Promise.promisifyAll(require(module)); // eslint-disable-line global-require
   });
 };

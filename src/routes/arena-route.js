@@ -1,7 +1,6 @@
 const Router = require('express').Router;
 const arenaRouter = new Router();
-
-import arena from '../controllers/arena-controller';
+const arena = require('../controllers/arena-controller');
 
 arenaRouter.route('/')
   .get(arena.find.bind(arena))
@@ -14,4 +13,4 @@ arenaRouter.route('/:id')
   .put(arena.update.bind(arena))
   .delete(arena.remove.bind(arena));
 
-export default arenaRouter;
+module.exports = arenaRouter;

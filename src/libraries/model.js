@@ -1,4 +1,4 @@
-export default class Model {
+class Model {
 
   constructor(SchemaModel) {
     this.SchemaModel = SchemaModel;
@@ -40,3 +40,5 @@ export default class Model {
       .execAsync();
   }
 }
+
+module.exports = Model;

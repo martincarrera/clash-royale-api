@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const gemsPerMinute = 0.1;
@@ -54,4 +54,4 @@ ChestSchema.pre('save', function preSave(next) {
   next();
 });
 
-export default mongoose.model('Chest', ChestSchema);
+module.exports = mongoose.model('Chest', ChestSchema);

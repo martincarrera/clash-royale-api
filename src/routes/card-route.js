@@ -1,7 +1,6 @@
 const Router = require('express').Router;
 const cardRouter = new Router();
-
-import card from '../controllers/card-controller';
+const card = require('../controllers/card-controller');
 
 cardRouter.route('/')
   .get(card.find.bind(card))
@@ -14,4 +13,4 @@ cardRouter.route('/:id')
   .put(card.update.bind(card))
   .delete(card.remove.bind(card));
 
-export default cardRouter;
+module.exports = cardRouter;
