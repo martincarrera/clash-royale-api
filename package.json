@@ -8,8 +8,8 @@
     "start": "node src/server.js"
   },
   "engines": {
-    "node": "4.4.x",
-    "npm": "2.15.x"
+    "node": "6.1.x",
+    "npm": "3.8.x"
   },
   "repository": {
     "type": "git",
