@@ -1,7 +1,7 @@
-import Model from '../libraries/model';
-import Arena from '../schemas/arena-schema';
-import ChestModel from '../models/chest-model';
-import CardModel from '../models/card-model';
+const Model = require('../libraries/model');
+const Arena = require('../schemas/arena-schema');
+const ChestModel = require('../models/chest-model');
+const CardModel = require('../models/card-model');
 
 class ArenaModel extends Model {
 
@@ -21,4 +21,4 @@ class ArenaModel extends Model {
 
 }
 
-export default new ArenaModel(Arena);
+module.exports = new ArenaModel(Arena);

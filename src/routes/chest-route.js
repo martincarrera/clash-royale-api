@@ -1,7 +1,6 @@
 const Router = require('express').Router;
 const chestRouter = new Router();
-
-import chest from '../controllers/chest-controller';
+const chest = require('../controllers/chest-controller');
 
 chestRouter.route('/')
   .get(chest.find.bind(chest))
@@ -14,4 +13,4 @@ chestRouter.route('/:id')
   .put(chest.update.bind(chest))
   .delete(chest.remove.bind(chest));
 
-export default chestRouter;
+module.exports = chestRouter;

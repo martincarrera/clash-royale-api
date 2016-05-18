@@ -1,6 +1,6 @@
-import Controller from '../libraries/controller';
-import ArenaModel from '../models/arena-model';
+const Controller = require('../libraries/controller');
+const ArenaModel = require('../models/arena-model');
 
 class ArenaController extends Controller {}
 
-export default new ArenaController(ArenaModel);
+module.exports = new ArenaController(ArenaModel);

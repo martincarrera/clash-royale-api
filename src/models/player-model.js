@@ -1,6 +1,6 @@
-import Model from '../libraries/model';
-import Player from '../schemas/player-schema';
+const Model = require('../libraries/model');
+const Player = require('../schemas/player-schema');
 
 class PlayerModel extends Model {}
 
-export default new PlayerModel(Player);
+module.exports = new PlayerModel(Player);

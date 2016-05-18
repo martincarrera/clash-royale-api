@@ -1,4 +1,4 @@
-export default class Controller {
+class Controller {
 
   constructor(model) {
     this.model = model;
@@ -56,3 +56,5 @@ export default class Controller {
     .catch(err => next(err));
   }
 }
+
+module.exports = Controller;

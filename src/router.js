@@ -1,9 +1,9 @@
-import arenaRoute from './routes/arena-route';
-import cardRoute from './routes/card-route';
-import chestRoute from './routes/chest-route';
-import playerRoute from './routes/player-route';
-import mainRoute from './routes/main-route';
-import cmsRoute from './routes/cms-route';
+const arenaRoute = require('./routes/arena-route');
+const cardRoute = require('./routes/card-route');
+const chestRoute = require('./routes/chest-route');
+const playerRoute = require('./routes/player-route');
+const mainRoute = require('./routes/main-route');
+const cmsRoute = require('./routes/cms-route');
 
 module.exports = (req, res, next) => {
   req.app.use('/', mainRoute);

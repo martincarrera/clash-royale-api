@@ -1,6 +1,6 @@
-import Model from '../libraries/model';
-import Chest from '../schemas/chest-schema';
+const Model = require('../libraries/model');
+const Chest = require('../schemas/chest-schema');
 
 class ChestModel extends Model {}
 
-export default new ChestModel(Chest);
+module.exports = new ChestModel(Chest);

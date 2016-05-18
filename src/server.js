@@ -1,13 +1,13 @@
-import config from './config/config';
+const config = require('./config/config');
 
-import express from 'express';
-import mongoose from 'mongoose';
+const express = require('express');
+const mongoose = require('mongoose');
 
-import bodyParser from 'body-parser';
-import morgan from 'morgan';
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
-import routes from './router';
-import middlewares from './middlewares';
+const routes = require('./router');
+const middlewares = require('./middlewares');
 
 const port = config.PORT;
 const app = express();
@@ -20,8 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
-// @TODO: fix middlewares.cors call, default shouldn't be needed
-app.use(middlewares.cors.default);
+app.use(middlewares.cors);
 
 app.listen(port, () => {
   console.log(`Magic happens on port ${port}`); // eslint-disable-line no-console
@@ -29,4 +28,4 @@ app.listen(port, () => {
 
 app.use('/', routes);
 
-export default app;
+module.exports = app;

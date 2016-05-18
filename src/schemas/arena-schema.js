@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ArenaSchema = new Schema({
@@ -48,4 +48,4 @@ const ArenaSchema = new Schema({
 
 });
 
-export default mongoose.model('Arena', ArenaSchema);
+module.exports = mongoose.model('Arena', ArenaSchema);

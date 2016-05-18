@@ -1,6 +1,6 @@
-import Model from '../libraries/model';
-import Card from '../schemas/card-schema';
+const Model = require('../libraries/model');
+const Card = require('../schemas/card-schema');
 
 class CardModel extends Model {}
 
-export default new CardModel(Card);
+module.exports = new CardModel(Card);
