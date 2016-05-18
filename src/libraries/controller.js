@@ -21,7 +21,7 @@ class Controller {
 
     this.model.findById(id)
     .then(doc => {
-      if (!doc) return next(404);
+      if (!doc) return res.status(404).send({ message: 'Wrong id, object not found.' });
       return res.status(200).json(doc);
     })
     .catch(err => next(err));
