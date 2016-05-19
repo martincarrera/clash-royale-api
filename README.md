@@ -1,4 +1,4 @@
-# Clash Royale API https://codeship.com/projects/153028/status?branch=master
+# Clash Royale API
 A [Clash Royale](https://clashroyale.com/) API that provides information about the cards, arenas, chests, and all the relative information about the game.
 
 ## Prerequisites
