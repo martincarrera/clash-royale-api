@@ -21,7 +21,7 @@ class Controller {
 
     this.model.findById(id)
     .then(doc => {
-      if (!doc) return next(404);
+      if (!doc) return res.status(404).send({ message: 'Wrong id, object not found.' });
       return res.status(200).json(doc);
     })
     .catch(err => next(err));
@@ -36,10 +36,9 @@ class Controller {
   update(req, res, next) {
     const id = req.params.id;
     const input = req.body;
-
     this.model.update(id, input)
     .then(doc => {
-      if (!doc) return next(404);
+      if (!doc) res.status(404).send({ message: 'Wrong id, object not found.' });
       return res.status(200).json(doc);
     })
     .catch(err => next(err));
@@ -50,7 +49,7 @@ class Controller {
 
     this.model.remove(id)
     .then(doc => {
-      if (!doc) return next(404);
+      if (!doc) res.status(404).send({ message: 'Wrong id, object not found.' });
       return res.sendStatus(204);
     })
     .catch(err => next(err));
