@@ -94,5 +94,41 @@ describe('Server API', function () {
       });
     });
 
+    describe('PUT /', () => {
+      it('should update a card', done => {
+        var updatedCard = newCard;
+        updatedCard.name = 'New Name';
+        request(app)
+          .put('/api/cards/' + newCard._id)
+          .set('Accept', 'application/json')
+          .send(updatedCard)
+          .expect('Content-Type', /json/)
+          .end((err, res) => {
+            newCard._id = res.body._id;
+            res.body.name.should.eql(updatedCard.name);
+            res.body.rarity.should.eql(newCard.rarity);
+            res.body.type.should.eql(newCard.type);
+            res.body.description.should.eql(newCard.description);
+            res.body.arena.should.eql(newCard.arena);
+            res.body.elixirCost.should.eql(newCard.elixirCost);
+            res.status.should.eql(200);
+            done();
+          });
+      });
+    });
+
+    describe('DELETE /', () => {
+      it('should delete a card', done => {
+        request(app)
+          .delete('/api/cards/' + newCard._id)
+          .set('Accept', 'application/json')
+          .expect('Content-Type', /json/)
+          .end((err, res) => {
+            res.status.should.eql(204);
+            done();
+          });
+      });
+    });
+
   });
 });
