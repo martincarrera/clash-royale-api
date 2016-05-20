@@ -21,6 +21,11 @@ $ cd clash-royale-api
 $ npm run dev
 ```
 
+### Test
+```
+$ npm test
+```
+
 Made with [Node.js](https://nodejs.org/) and :heart:
 
 ----------
