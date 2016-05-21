@@ -26,7 +26,7 @@ $ npm run dev
 $ npm test
 ```
 
-Made with [Node.js](https://nodejs.org/) and :heart:
+Made with :heart: by a clash fan. 
 
 ----------
 Clash Royale is a Registered Trademark of SuperCell. This project is not affiliated with SuperCell or any of its affiliates in any way. Project is available without warranty express or implied.
