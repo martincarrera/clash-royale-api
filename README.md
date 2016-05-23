@@ -4,7 +4,7 @@ A [Clash Royale](https://clashroyale.com/) API that provides information about t
 
 ## Prerequisites
 Make sure you have installed all these prerequisites on your development machine.
-* [Node.js](http://www.nodejs.org/download/)
+* [Node.js](https://nodejs.org/en/download/)
 * [MongoDB](https://www.mongodb.org/)
 
 ### Install
