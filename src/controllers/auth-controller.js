@@ -3,6 +3,7 @@ const User = require('../models/user-model');
 const config = require('../config/config');
 const jwt = require('jsonwebtoken');
 const secret = config.SECRET;
+const JWT_EXPIRATION = config.JWT_EXPIRATION;
 
 class AuthController extends Controller {
   validate(req, res, next) {
@@ -19,7 +20,7 @@ class AuthController extends Controller {
       const token = jwt.sign({
         name: user.name,
         username: user.username,
-      }, secret, { expiresIn: '24h' });
+      }, secret, { expiresIn: JWT_EXPIRATION });
 
       return res.status(200).send(token);
     })
