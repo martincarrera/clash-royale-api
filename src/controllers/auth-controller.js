@@ -11,7 +11,6 @@ class AuthController extends Controller {
       if (!user) {
         return res.status(401).send('Failed to authenticate token.');
       }
-      console.log(user);
       const validPassword = user.comparePassword(req.body.password);
       if (!validPassword) {
         return res.status(401).send('Authentication failed. Invalid password.');
