@@ -6,4 +6,6 @@ module.exports = {
   SECRET: process.env.SECRET || 'IloveClashRoyaleAPIsomuch',
   JWT_EXPIRATION: process.env.JWT_EXPIRATION || 1440,
   DISABLE_AUTH: process.env.DISABLE_AUTH || false,
+  ADMIN_USERNAME: process.env.ADMIN_USERNAME || 'admin',
+  ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || 'admin',
 };
