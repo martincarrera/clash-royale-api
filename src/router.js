@@ -10,7 +10,7 @@ const authMiddleware = require('./middlewares/auth-middleware');
 
 module.exports = (req, res, next) => {
   req.app.use('/', mainRoute);
-  req.app.use('/authenticate', authRoute);
+  req.app.use('/api/authenticate', authRoute);
   req.app.use(authMiddleware);
   req.app.use('/cms', cmsRoute);
   req.app.use('/api/arenas', arenaRoute);
