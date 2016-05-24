@@ -12,7 +12,7 @@ const authMiddleware = require('./middlewares/auth-middleware');
 module.exports = (req, res, next) => {
   req.app.use('/', mainRoute);
   req.app.use('/api/authenticate', authRoute);
-  if (config.DISABLE_AUTH === 'false') {
+  if (!config.DISABLE_AUTH) {
     req.app.use(authMiddleware);
   }
   req.app.use('/cms', cmsRoute);
