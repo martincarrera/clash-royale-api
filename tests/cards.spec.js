@@ -2,17 +2,30 @@ require('should');
 
 const request = require('supertest');
 const app = require('./helpers/mock.app');
+const config = require('../src/config/config');
+var token = '';
 var newCard = require('./helpers/newCard');
 
 describe('Server API', function () {
   this.timeout(5000);
 
   describe('/api/cards', () => {
+    before((done) => {
+        request(app)
+          .post('/api/authenticate')
+          .set('Accept', 'application/x-www-form-urlencoded')
+          .send({ username: config.ADMIN_USERNAME, password: config.ADMIN_PASSWORD})
+          .end((err, res) => {
+            token = res.text;
+            done();
+          });
+    });
     describe('POST /', () => {
       it('should create a new Card', done => {
         request(app)
           .post('/api/cards')
           .set('Accept', 'application/json')
+          .set('Authorization', token)
           .send(newCard)
           .expect('Content-Type', /json/)
           .end((err, res) => {
@@ -25,6 +38,7 @@ describe('Server API', function () {
         request(app)
           .post('/api/cards')
           .set('Accept', 'application/json')
+          .set('Authorization', token)
           .send(newCard)
           .end((err, res) => {
             res.status.should.eql(500);
@@ -37,6 +51,7 @@ describe('Server API', function () {
       it('should find all cards', done => {
         request(app)
           .get('/api/cards')
+          .set('Authorization', token)
           .expect('Content-Type', /json/)
           .end((err, res) => {
             newCard._id = res.body[0]._id;
@@ -54,6 +69,7 @@ describe('Server API', function () {
       it('should find one card', done => {
         request(app)
           .get('/api/cards/' + newCard._id)
+          .set('Authorization', token)
           .expect('Content-Type', /json/)
           .end((err, res) => {
             res.body.name.should.eql(newCard.name);
@@ -70,6 +86,7 @@ describe('Server API', function () {
       it('should not find one card', done => {
         request(app)
           .get('/api/cards/5734869359daec0c229d31c3')
+          .set('Authorization', token)
           .expect('Content-Type', /json/)
           .end((err, res) => {
             res.status.should.eql(404);
@@ -80,6 +97,7 @@ describe('Server API', function () {
       it('should find card by type', done => {
         request(app)
           .get('/api/cards?rarity='  + newCard.rarity)
+          .set('Authorization', token)
           .expect('Content-Type', /json/)
           .end((err, res) => {
             res.body[0].name.should.eql(newCard.name);
@@ -101,6 +119,7 @@ describe('Server API', function () {
         request(app)
           .put('/api/cards/' + newCard._id)
           .set('Accept', 'application/json')
+          .set('Authorization', token)
           .send(updatedCard)
           .expect('Content-Type', /json/)
           .end((err, res) => {
@@ -122,6 +141,7 @@ describe('Server API', function () {
         request(app)
           .delete('/api/cards/' + newCard._id)
           .set('Accept', 'application/json')
+          .set('Authorization', token)
           .expect('Content-Type', /json/)
           .end((err, res) => {
             res.status.should.eql(204);

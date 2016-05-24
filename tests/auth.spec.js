@@ -12,7 +12,6 @@ describe('Server API', function () {
     describe('POST /', () => {
       it('should try to authenticate with no username', done => {
         var user = { password: 'asd' };
-        console.log(user);
         request(app)
           .post('/api/authenticate')
           .set('Accept', 'application/json')
@@ -27,7 +26,6 @@ describe('Server API', function () {
       });
       it('should try to authenticate with no password', done => {
         var user = { username: config.ADMIN_USERNAME };
-        console.log(user);
         request(app)
           .post('/api/authenticate')
           .set('Accept', 'application/json')
@@ -42,7 +40,6 @@ describe('Server API', function () {
       });
       it('should try to authenticate with wrong username', done => {
         var user = { username: 'wrongUsername', password: config.ADMIN_PASSWORD };
-        console.log(user);
         request(app)
           .post('/api/authenticate')
           .set('Accept', 'application/json')
@@ -57,7 +54,6 @@ describe('Server API', function () {
       });
       it('should try to authenticate with wrong password', done => {
         var user = { username: config.ADMIN_USERNAME, password: 'wrongPassword' };
-        console.log(user);
         request(app)
           .post('/api/authenticate')
           .set('Accept', 'application/json')
@@ -72,7 +68,6 @@ describe('Server API', function () {
       });
       it('should authenticate OK.', done => {
         var user = { username: config.ADMIN_USERNAME, password: config.ADMIN_PASSWORD };
-        console.log(user);
         request(app)
           .post('/api/authenticate')
           .set('Accept', 'application/json')
