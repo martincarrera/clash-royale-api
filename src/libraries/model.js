@@ -20,12 +20,6 @@ class Model {
       .execAsync();
   }
 
-  findOne(query, populate) {
-    return this.SchemaModel.findOne(query)
-      .populate(populate || '')
-      .execAsync();
-  }
-
   findById(id, populate) {
     if (!id) throw new Error('Missing id parametter');
     return this.SchemaModel
