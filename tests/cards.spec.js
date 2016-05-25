@@ -5,6 +5,7 @@ const app = require('./helpers/mock.app');
 const config = require('../src/config/config');
 var token = '';
 var newCard = require('./helpers/newCard');
+var updatedCard = JSON.parse(JSON.stringify(newCard));
 
 describe('Server API', function () {
   this.timeout(5000);
@@ -45,6 +46,18 @@ describe('Server API', function () {
             done();
           });
       });
+
+        it('should try to create a new Card with no token', done => {
+          request(app)
+            .post('/api/cards')
+            .set('Accept', 'application/json')
+            .send(newCard)
+            .expect('Content-Type', /json/)
+            .end((err, res) => {
+              res.status.should.eql(401);
+              done();
+            });
+        });
     });
 
     describe('GET /', () => {
@@ -114,7 +127,6 @@ describe('Server API', function () {
 
     describe('PUT /', () => {
       it('should update a card', done => {
-        var updatedCard = newCard;
         updatedCard.name = 'New Name';
         request(app)
           .put('/api/cards/' + newCard._id)
@@ -123,6 +135,9 @@ describe('Server API', function () {
           .send(updatedCard)
           .expect('Content-Type', /json/)
           .end((err, res) => {
+            console.log(res.body);
+            console.log(updatedCard);
+            console.log(newCard);
             newCard._id = res.body._id;
             res.body.name.should.eql(updatedCard.name);
             res.body.rarity.should.eql(newCard.rarity);
@@ -134,17 +149,45 @@ describe('Server API', function () {
             done();
           });
       });
+
+      it('should try to delete an invalid card', done => {
+        updatedCard._id = '111111111111111111111111';
+        request(app)
+          .put('/api/cards/' + updatedCard._id)
+          .set('Accept', 'application/json')
+          .set('Authorization', token)
+          .send(updatedCard)
+          .expect('Content-Type', /json/)
+          .end((err, res) => {
+            res.status.should.eql(404);
+            done();
+          });
+      });
     });
 
     describe('DELETE /', () => {
       it('should delete a card', done => {
+        request(app)
+        .delete('/api/cards/' + newCard._id)
+          .set('Accept', 'application/json')
+          .set('Authorization', token)
+          .expect('Content-Type', /json/)
+          .end((err, res) => {
+            res.status.should.eql(204);
+            done();
+          });
+      });
+    });
+
+    describe('DELETE /', () => {
+      it('should try to delete an invalid card', done => {
         request(app)
           .delete('/api/cards/' + newCard._id)
           .set('Accept', 'application/json')
           .set('Authorization', token)
           .expect('Content-Type', /json/)
           .end((err, res) => {
-            res.status.should.eql(204);
+            res.status.should.eql(404);
             done();
           });
       });

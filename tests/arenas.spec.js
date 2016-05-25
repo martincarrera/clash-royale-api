@@ -4,9 +4,11 @@ const request = require('supertest');
 const app = require('./helpers/mock.app');
 const config = require('../src/config/config');
 var token = '';
-var newCard = require('./helpers/newCard');
+var aCard = require('./helpers/newCard');
+var aChest = require('./helpers/newChest');
 var newArena = require('./helpers/newArena');
-var newChest = require('./helpers/newChest');
+var newCard = JSON.parse(JSON.stringify(aCard));
+var newChest = JSON.parse(JSON.stringify(aChest));
 newCard.arena = newArena.number;
 newChest.arena = newArena.number;
 
