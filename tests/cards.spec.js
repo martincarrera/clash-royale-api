@@ -135,9 +135,6 @@ describe('Server API', function () {
           .send(updatedCard)
           .expect('Content-Type', /json/)
           .end((err, res) => {
-            console.log(res.body);
-            console.log(updatedCard);
-            console.log(newCard);
             newCard._id = res.body._id;
             res.body.name.should.eql(updatedCard.name);
             res.body.rarity.should.eql(newCard.rarity);
