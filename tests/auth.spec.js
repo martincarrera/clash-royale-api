@@ -4,7 +4,7 @@ const request = require('supertest');
 const app = require('./helpers/mock.app');
 const config = require('../src/config/config');
 
-describe('Server API', function () {
+describe('Authentication.', function () {
   this.timeout(5000);
 
 

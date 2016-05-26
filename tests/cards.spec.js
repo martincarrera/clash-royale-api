@@ -7,7 +7,7 @@ var token = '';
 var newCard = require('./helpers/newCard');
 var updatedCard = JSON.parse(JSON.stringify(newCard));
 
-describe('Server API', function () {
+describe('Cards.', function () {
   this.timeout(5000);
 
   describe('/api/cards', () => {
@@ -47,17 +47,30 @@ describe('Server API', function () {
           });
       });
 
-        it('should try to create a new Card with no token', done => {
-          request(app)
-            .post('/api/cards')
-            .set('Accept', 'application/json')
-            .send(newCard)
-            .expect('Content-Type', /json/)
-            .end((err, res) => {
-              res.status.should.eql(401);
-              done();
-            });
-        });
+      it('should try to create a new Card with no token', done => {
+        request(app)
+          .post('/api/cards')
+          .set('Accept', 'application/json')
+          .send(newCard)
+          .expect('Content-Type', /json/)
+          .end((err, res) => {
+            res.status.should.eql(401);
+            done();
+          });
+      });
+
+      it('should try to create a new Card with an invalid token', done => {
+        request(app)
+          .post('/api/cards')
+          .set('Accept', 'application/json')
+          .set('Authorization', '111111111111111111111111111111111111.111111111111111111111111111111111111111111111111111111111111111111111111.1111111111111111111111111111111111111111111')
+          .send(newCard)
+          .expect('Content-Type', /json/)
+          .end((err, res) => {
+            res.status.should.eql(401);
+            done();
+          });
+      });
     });
 
     describe('GET /', () => {

@@ -12,7 +12,7 @@ var newChest = JSON.parse(JSON.stringify(aChest));
 newCard.arena = newArena.number;
 newChest.arena = newArena.number;
 
-describe('Server API', function () {
+describe('Arenas.', function () {
   this.timeout(5000);
 
   before((done) => {
