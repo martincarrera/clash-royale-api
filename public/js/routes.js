@@ -27,4 +27,9 @@ angular.module('clash-royale-api')
         templateUrl: '../views/about.html',
         controller: 'AboutController as vm'
       });
+      .state('login', {
+        url: '/login',
+        templateUrl: '../views/login.html',
+        controller: 'LoginController as vm'
+      });
   });
