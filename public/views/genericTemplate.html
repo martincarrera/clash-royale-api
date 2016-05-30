@@ -1,12 +1,29 @@
-<div>
-  <div class="jumbotron text-center">
-    <h1>{{ vm.title }}</h1>
+<div class="container">
+  <nav class="navbar navbar-inverse">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            Clash Royale API
+          </a>
+      </div>
+      <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="arenas">Arenas</a></li>
+            <li><a ui-sref="cards">Cards</a></li>
+            <li><a ui-sref="chests">Chests</a></li>
+            <li><a ui-sref="players">Players</a></li>
+          </ul>
+      </div>
+  </nav>
+  <div>
+    <div class="jumbotron text-center">
+      <h1>{{ vm.title }}</h1>
+    </div>
+    <form ng-submit="vm.submit(vm.model)" novalidate>
+      <formly-form model="vm.model" fields="vm.fields" form="vm.form">
+        <button type="submit" ng-disabled="vm.form.$invalid" class="btn btn-default">Submit</button>
+      </formly-form>
+    </form>
+    <h2>{{ vm.previewTitle }}</h2>
+    <pre>{{ vm.model | json }}</pre>
   </div>
-  <form ng-submit="vm.submit(vm.model)" novalidate>
-    <formly-form model="vm.model" fields="vm.fields" form="vm.form">
-      <button type="submit" ng-disabled="vm.form.$invalid" class="btn btn-default">Submit</button>
-    </formly-form>
-  </form>
-  <h2>{{ vm.previewTitle }}</h2>
-  <pre>{{ vm.model | json }}</pre>
 </div>

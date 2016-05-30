@@ -1,0 +1,7 @@
+<div class="container">
+  <form class="form-signin" ng-submit="vm.submit(vm.model)" novalidate>
+    <formly-form model="vm.model" fields="vm.fields" form="vm.form">
+      <button type="submit" ng-disabled="vm.form.$invalid" class="btn btn-default">Submit</button>
+    </formly-form>
+  </form>
+</div>
