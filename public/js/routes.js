@@ -1,6 +1,6 @@
 angular.module('clash-royale-api')
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/cards');
+    $urlRouterProvider.otherwise('/login');
     $stateProvider
       .state('arenas', {
         url: '/arenas',
@@ -25,6 +25,18 @@ angular.module('clash-royale-api')
       .state('login', {
         url: '/login',
         templateUrl: '../views/login.html',
-        controller: 'LoginController as vm'
+        controller: 'LoginController as vm',
+        resolve: {
+          userLogInService: userLogInService
+        }
       });
+
+      function userLogInService($state) {
+        if (localStorage.token) {
+          $state.go('cards');
+          return;
+        }
+        $state.go('login');
+        return;
+       };
   });

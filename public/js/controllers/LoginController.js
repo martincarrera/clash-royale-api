@@ -4,15 +4,15 @@
   .module('clash-royale-api')
   .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['LoginService'];
+  LoginController.$inject = ['LoginService', '$state'];
 
-  function LoginController(LoginService) {
+  function LoginController(LoginService, $state) {
     var vm = this;
     vm.title = 'Log In';
     vm.model = {};
     vm.fields = [
       {
-        key: 'user',
+        key: 'username',
         type: 'input',
         templateOptions: {
           label: 'User',
@@ -31,7 +31,11 @@
     ];
 
     vm.submit = function(model) {
-      LoginService.authenticate(model);
+      LoginService.auth(model)
+      .then(function(token) {
+        localStorage.token = token.data;
+        $state.go('cards');
+      });
     }
   }
 
