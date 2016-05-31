@@ -1,0 +1,24 @@
+.form-signin {
+  min-height: 100vh;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-container {
+  display: flex;
+  align-items: stretch;;
+  justify-content: center;
+}
+
+.layout {
+  min-width: 200px;
+  flex: 1 0 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.preview {
+  padding-bottom: 25px;
+}
