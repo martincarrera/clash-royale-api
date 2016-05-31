@@ -4,9 +4,9 @@
   .module('clash-royale-api')
   .controller('ArenasController', ArenasController);
 
-  ArenasController.$inject = ['ArenasService'];
+  ArenasController.$inject = ['ArenasService', 'ngNotify'];
 
-  function ArenasController(ArenasService) {
+  function ArenasController(ArenasService, ngNotify) {
     var vm = this;
     vm.title = 'Arenas';
     vm.previewTitle = 'Preview Arena';
@@ -86,8 +86,17 @@
       },
     ];
 
+    vm.originalFields = angular.copy(vm.fields);
+
     vm.submit = function(model) {
-      ArenasService.create(model);
+      ArenasService.create(model)
+      .then(function(data) {
+        ngNotify.set('Your Arena was successfully saved!', 'success');
+        vm.options.resetModel();
+      })
+      .catch(function(error) {
+        ngNotify.set('There was a problem saving your Arena... ', 'error');
+      });
     }
   }
 

@@ -5,8 +5,8 @@ angular.module('clash-royale-api').factory('ChestsService', function($http) {
             return $http.get('/api/chests');
         },
 
-        create : function(cardData) {
-            return $http.post('/api/chests', cardData);
+        create : function(chestData) {
+            return $http.post('/api/chests', chestData);
         },
 
         delete : function(id) {

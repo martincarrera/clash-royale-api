@@ -37,7 +37,7 @@
     "eslint-plugin-react": "^5.0.1",
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
-    "mockgoose": "^6.0.3",
+    "mockgoose": "^5.3.2",
     "should": "^8.3.2",
     "supertest": "^1.2.0"
   }

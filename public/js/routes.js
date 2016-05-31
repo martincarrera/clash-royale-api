@@ -1,6 +1,6 @@
 angular.module('clash-royale-api')
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/about');
+    $urlRouterProvider.otherwise('/login');
     $stateProvider
       .state('arenas', {
         url: '/arenas',
@@ -22,9 +22,9 @@ angular.module('clash-royale-api')
         templateUrl: '../views/genericTemplate.html',
         controller: 'PlayersController as vm'
       })
-      .state('about', {
-        url: '/about',
-        templateUrl: '../views/about.html',
-        controller: 'AboutController as vm'
+      .state('login', {
+        url: '/login',
+        templateUrl: '../views/login.html',
+        controller: 'LoginController as vm'
       });
   });

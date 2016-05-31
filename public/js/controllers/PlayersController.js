@@ -4,13 +4,13 @@
     .module('clash-royale-api')
     .controller('PlayersController', PlayersController);
 
-  PlayersController.$inject = ['PlayersService'];
+  PlayersController.$inject = ['PlayersService', 'ngNotify'];
 
-  function PlayersController(PlayersService) {
+  function PlayersController(PlayersService, ngNotify) {
     var vm = this;
     vm.title = 'Players';
+    vm.previewTitle = 'Preview Players';
     vm.model = {};
-
     vm.fields = [
       {
         key: 'level',
@@ -95,8 +95,17 @@
       },
     ];
 
+    vm.originalFields = angular.copy(vm.fields);
+
     vm.submit = function(model) {
-      PlayersService.create(model);
+      PlayersService.create(model)
+      .then(function(data) {
+        ngNotify.set('Your Player was successfully saved!', 'success');
+        vm.options.resetModel();
+      })
+      .catch(function(error) {
+        ngNotify.set('There was a problem saving your Player... ', 'error');
+      });
     }
   }
 

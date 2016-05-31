@@ -5,8 +5,8 @@ angular.module('clash-royale-api').factory('ArenasService', function($http) {
             return $http.get('/api/arenas');
         },
 
-        create : function(cardData) {
-            return $http.post('/api/arenas', cardData);
+        create : function(arenaData) {
+            return $http.post('/api/arenas', arenaData);
         },
 
         delete : function(id) {
