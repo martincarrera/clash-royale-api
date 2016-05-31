@@ -79,8 +79,13 @@
       },
     ];
 
+    vm.originalFields = angular.copy(vm.fields);
+
     vm.submit = function(model) {
-      CardsService.create(model);
+      CardsService.create(model)
+      .then(function() {
+        vm.options.resetModel();
+      });
     }
   }
 

@@ -86,8 +86,13 @@
       },
     ];
 
+    vm.originalFields = angular.copy(vm.fields);
+
     vm.submit = function(model) {
-      ArenasService.create(model);
+      ArenasService.create(model)
+      .then(function() {
+        vm.options.resetModel();
+      });
     }
   }
 

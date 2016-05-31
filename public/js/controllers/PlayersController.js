@@ -9,8 +9,8 @@
   function PlayersController(PlayersService) {
     var vm = this;
     vm.title = 'Players';
+    vm.previewTitle = 'Preview Players';
     vm.model = {};
-
     vm.fields = [
       {
         key: 'level',
@@ -95,8 +95,13 @@
       },
     ];
 
+    vm.originalFields = angular.copy(vm.fields);
+
     vm.submit = function(model) {
-      PlayersService.create(model);
+      PlayersService.create(model)
+      .then(function() {
+        vm.options.resetModel();
+      });
     }
   }
 

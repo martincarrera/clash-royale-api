@@ -18,12 +18,19 @@
     <div class="jumbotron text-center">
       <h1>{{ vm.title }}</h1>
     </div>
-    <form ng-submit="vm.submit(vm.model)" novalidate>
-      <formly-form model="vm.model" fields="vm.fields" form="vm.form">
-        <button type="submit" ng-disabled="vm.form.$invalid" class="btn btn-default">Submit</button>
-      </formly-form>
-    </form>
-    <h2>{{ vm.previewTitle }}</h2>
-    <pre>{{ vm.model | json }}</pre>
+    <div class="layout-container">
+      <div class="layout">
+        <h2>{{ vm.title }}</h2>
+        <form ng-submit="vm.submit(vm.model)" novalidate>
+          <formly-form model="vm.model" fields="vm.fields" form="vm.form" options="vm.options">
+            <button type="submit" ng-disabled="vm.form.$invalid" class="btn btn-default">Submit</button>
+          </formly-form>
+        </form>
+      </div>
+      <div class="layout">
+        <h2 class="preview">{{ vm.previewTitle }}</h2>
+        <pre>{{ vm.model | json }}</pre>
+      </div>
+    </div>
   </div>
 </div>

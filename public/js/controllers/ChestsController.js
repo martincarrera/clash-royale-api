@@ -113,8 +113,13 @@
       },
     ];
 
+    vm.originalFields = angular.copy(vm.fields);
+
     vm.submit = function(model) {
-      ChestsService.create(model);
+      ChestsService.create(model)
+      .then(function() {
+        vm.options.resetModel();
+      });
     }
   }
 
