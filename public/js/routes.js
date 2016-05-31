@@ -25,18 +25,6 @@ angular.module('clash-royale-api')
       .state('login', {
         url: '/login',
         templateUrl: '../views/login.html',
-        controller: 'LoginController as vm',
-        resolve: {
-          userLogInService: userLogInService
-        }
+        controller: 'LoginController as vm'
       });
-
-      function userLogInService($state) {
-        if (localStorage.token) {
-          $state.go('cards');
-          return;
-        }
-        $state.go('login');
-        return;
-       };
   });
