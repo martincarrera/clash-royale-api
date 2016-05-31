@@ -9,6 +9,12 @@ const PlayerSchema = new Schema({
     require: true,
   },
 
+  idName: {
+    type: String,
+    unique: true,
+    require: true,
+  },
+
   kingsTower: {
     hitpoints: { type: Number, require: true },
     range: { type: Number, require: true },
@@ -28,6 +34,13 @@ const PlayerSchema = new Schema({
     require: true,
   },
 
+});
+
+PlayerSchema.pre('save', function preSave(next) {
+  if (!this.idName) {
+    this.idName = 'player'.concat('-', this.level);
+  }
+  next();
 });
 
 module.exports = mongoose.model('Player', PlayerSchema);
