@@ -4,9 +4,9 @@
   .module('clash-royale-api')
   .controller('CardsController', CardsController);
 
-  CardsController.$inject = ['CardsService'];
+  CardsController.$inject = ['CardsService', 'ngNotify'];
 
-  function CardsController(CardsService) {
+  function CardsController(CardsService, ngNotify) {
     var vm = this;
     vm.title = 'Cards';
     vm.previewTitle = 'Preview Card';
@@ -83,8 +83,12 @@
 
     vm.submit = function(model) {
       CardsService.create(model)
-      .then(function() {
+      .then(function(data) {
+        ngNotify.set('Your Card was successfully saved!', 'success');
         vm.options.resetModel();
+      })
+      .catch(function(error) {
+        ngNotify.set('There was a problem saving your Card... ', 'error');
       });
     }
   }

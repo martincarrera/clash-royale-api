@@ -4,9 +4,9 @@
   .module('clash-royale-api')
   .controller('ChestsController', ChestsController);
 
-  ChestsController.$inject = ['ChestsService'];
+  ChestsController.$inject = ['ChestsService', 'ngNotify'];
 
-  function ChestsController(ChestsService) {
+  function ChestsController(ChestsService, ngNotify) {
     var vm = this;
     vm.title = 'Chests';
     vm.previewTitle = 'Preview Card';
@@ -117,8 +117,12 @@
 
     vm.submit = function(model) {
       ChestsService.create(model)
-      .then(function() {
+      .then(function(data) {
+        ngNotify.set('Your Chest was successfully saved!', 'success');
         vm.options.resetModel();
+      })
+      .catch(function(error) {
+        ngNotify.set('There was a problem saving your Chest... ', 'error');
       });
     }
   }
