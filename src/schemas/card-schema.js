@@ -9,6 +9,12 @@ const CardSchema = new Schema({
     require: true,
   },
 
+  idName: {
+    type: String,
+    unique: true,
+    require: true,
+  },
+
   rarity: {
     type: String,
     enum: 'Common Rare Epic Legendary'.split(' '),
@@ -36,6 +42,15 @@ const CardSchema = new Schema({
     require: true,
   },
 
+});
+
+CardSchema.pre('save', function preSave(next) {
+  if (!this.idName) {
+    this.idName = JSON.parse(JSON.stringify(this.name.toLowerCase()));
+    this.idName = this.idName.replace(/ /g, '-');
+    this.idName = this.idName.replace(/\./g, '');
+  }
+  next();
 });
 
 module.exports = mongoose.model('Card', CardSchema);

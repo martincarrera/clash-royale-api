@@ -15,6 +15,12 @@ const ArenaSchema = new Schema({
     require: true,
   },
 
+  idName: {
+    type: String,
+    unique: true,
+    require: true,
+  },
+
   victoryGold: {
     type: Number,
     require: true,
@@ -46,6 +52,15 @@ const ArenaSchema = new Schema({
     ref: 'Card',
   }],
 
+});
+
+ArenaSchema.pre('save', function preSave(next) {
+  if (!this.idName) {
+    this.idName = JSON.parse(JSON.stringify(this.name.toLowerCase()));
+    this.idName = this.idName.replace(/ /g, '-');
+    this.idName = this.idName.replace(/\./g, '');
+  }
+  next();
 });
 
 module.exports = mongoose.model('Arena', ArenaSchema);

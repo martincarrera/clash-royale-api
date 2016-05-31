@@ -14,6 +14,12 @@ const ChestSchema = new Schema({
     require: true,
   },
 
+  idName: {
+    type: String,
+    unique: true,
+    require: true,
+  },
+
   arena: {
     type: Number,
     default: 0,
@@ -50,6 +56,12 @@ ChestSchema.index({ name: 1, arena: 1 }, { unique: true });
 ChestSchema.pre('save', function preSave(next) {
   if (!this.unlock.gemCost) {
     this.unlock.gemCost = this.unlock.time * gemsPerMinute;
+  }
+  if (!this.idName) {
+    this.idName = JSON.parse(JSON.stringify(this.name.toLowerCase()));
+    this.idName = this.idName.replace(/ /g, '-');
+    this.idName = this.idName.replace(/\./g, '');
+    this.idName = this.idName.concat('-', this.arena);
   }
   next();
 });
