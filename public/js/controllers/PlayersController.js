@@ -93,6 +93,15 @@
           placeholder: 0
         }
       },
+      {
+        key: 'maxExp',
+        type: 'input',
+        templateOptions: {
+          label: 'Max. experience before level up.',
+          required: true,
+          placeholder: 0
+        }
+      },
     ];
 
     vm.originalFields = angular.copy(vm.fields);
