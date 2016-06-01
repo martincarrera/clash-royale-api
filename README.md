@@ -3,6 +3,17 @@
 
 A [Clash Royale](https://clashroyale.com/) API that provides information about the cards, arenas, chests, and all the relative information about the game.
 
+## How to use?
+
+Get all the information you need from this routes:
+
+#### [Arenas](https://clash-royale.herokuapp.com/api/arenas)
+#### [Cards](https://clash-royale.herokuapp.com/api/cards)
+#### [Chests](https://clash-royale.herokuapp.com/api/chests)
+#### [Players](https://clash-royale.herokuapp.com/api/players)
+
+
+
 ## Prerequisites
 Make sure you have installed all these prerequisites on your development machine.
 * [Node.js](https://nodejs.org/en/download/)
