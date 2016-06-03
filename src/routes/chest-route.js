@@ -9,7 +9,7 @@ chestRouter.route('/')
   .delete(chest.remove.bind(chest));
 
 chestRouter.route('/:id')
-  .get(chest.findById.bind(chest))
+  .get(chest.findByIdOrNameId.bind(chest))
   .put(chest.update.bind(chest))
   .delete(chest.remove.bind(chest));
 

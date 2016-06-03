@@ -9,7 +9,7 @@ cardRouter.route('/')
   .delete(card.remove.bind(card));
 
 cardRouter.route('/:id')
-  .get(card.findById.bind(card))
+  .get(card.findByIdOrNameId.bind(card))
   .put(card.update.bind(card))
   .delete(card.remove.bind(card));
 
