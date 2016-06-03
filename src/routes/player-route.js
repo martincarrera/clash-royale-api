@@ -10,7 +10,7 @@ playerRouter.route('/')
   .delete(player.remove.bind(player));
 
 playerRouter.route('/:id')
-  .get(player.findById.bind(player))
+  .get(player.findByIdOrNameId.bind(player))
   .put(player.update.bind(player))
   .delete(player.remove.bind(player));
 

@@ -9,7 +9,7 @@ arenaRouter.route('/')
   .delete(arena.remove.bind(arena));
 
 arenaRouter.route('/:id')
-  .get(arena.findById.bind(arena))
+  .get(arena.findByIdOrNameId.bind(arena))
   .put(arena.update.bind(arena))
   .delete(arena.remove.bind(arena));
 

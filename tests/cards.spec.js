@@ -7,6 +7,7 @@ var token = '';
 var aCard = require('./helpers/newCard');
 var newCard = JSON.parse(JSON.stringify(aCard));
 var updatedCard = JSON.parse(JSON.stringify(newCard));
+updatedCard.idName = (JSON.parse(JSON.stringify(updatedCard.name.toLowerCase()))).replace(/ /g, '-').replace(/\./g, '');
 
 describe('Cards.', function () {
   this.timeout(5000);
@@ -32,6 +33,7 @@ describe('Cards.', function () {
           .expect('Content-Type', /json/)
           .end((err, res) => {
             res.status.should.eql(201);
+            newCard.idName = res.body.idName;
             done();
           });
       });
@@ -93,7 +95,7 @@ describe('Cards.', function () {
           });
       });
 
-      it('should find one card', done => {
+      it('should find one card by id', done => {
         request(app)
           .get('/api/cards/' + newCard._id)
           .set('Authorization', token)
@@ -110,9 +112,37 @@ describe('Cards.', function () {
           });
       });
 
-      it('should not find one card', done => {
+      it('should find one card by idName', done => {
         request(app)
-          .get('/api/cards/5734869359daec0c229d31c3')
+          .get('/api/cards/' + newCard.idName)
+          .set('Authorization', token)
+          .expect('Content-Type', /json/)
+          .end((err, res) => {
+            res.body.name.should.eql(newCard.name);
+            res.body.rarity.should.eql(newCard.rarity);
+            res.body.type.should.eql(newCard.type);
+            res.body.description.should.eql(newCard.description);
+            res.body.arena.should.eql(newCard.arena);
+            res.body.elixirCost.should.eql(newCard.elixirCost);
+            res.status.should.eql(200);
+            done();
+          });
+      });
+
+      it('should not find one card by id', done => {
+        request(app)
+          .get('/api/cards/111111111111111111111111')
+          .set('Authorization', token)
+          .expect('Content-Type', /json/)
+          .end((err, res) => {
+            res.status.should.eql(404);
+            done();
+          });
+      });
+
+      it('should not find one card by idName', done => {
+        request(app)
+          .get('/api/cards/some-name-here')
           .set('Authorization', token)
           .expect('Content-Type', /json/)
           .end((err, res) => {
