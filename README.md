@@ -12,10 +12,10 @@ Get all the information you need from this routes:
 #### [Chests](https://clash-royale.herokuapp.com/api/chests)
 #### [Players](https://clash-royale.herokuapp.com/api/players)
 
-Also, you can get the information of a specific object like this:
+Also, you can get the information of a specific object by id or idName:
 
-##### [Arrows](https://clash-royale.herokuapp.com/api/cards/574de12cc7f71c0f00e4a73a)
-##### [Royal Arena](https://clash-royale.herokuapp.com/api/arenas/574f2ba48e458e0f00b35275)
+##### [Arrows by id](https://clash-royale.herokuapp.com/api/cards/574de12cc7f71c0f00e4a73a)
+##### [Arrows by idName](https://clash-royale.herokuapp.com/api/cards/arrows)
 
 ## Prerequisites
 Make sure you have installed all these prerequisites on your development machine.
