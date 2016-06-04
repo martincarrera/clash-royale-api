@@ -1,4 +1,4 @@
-# [Clash Royale API](https://clash-royale.herokuapp.com/) 
+# [Clash Royale API](http://www.clashapi.xyz/) 
 [![Codeship Status for martincarrera/clash-royale-api](https://codeship.com/projects/4f412dd0-0006-0134-4d8c-1e95689fe79f/status?branch=master)](https://codeship.com/projects/153028) [![Coverage Status](https://coveralls.io/repos/github/martincarrera/clash-royale-api/badge.svg?branch=master)](https://coveralls.io/github/martincarrera/clash-royale-api?branch=master) [![bitHound Overall Score](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/score.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api) [![bitHound Dependencies](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/dependencies.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/devDependencies.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/code.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api)
 
 A [Clash Royale](http://supercell.com/en/games/clashroyale/) API that provides information about the game.
@@ -7,15 +7,15 @@ A [Clash Royale](http://supercell.com/en/games/clashroyale/) API that provides i
 
 Get all the information you need from this routes:
 
-#### [Arenas](https://clash-royale.herokuapp.com/api/arenas)
-#### [Cards](https://clash-royale.herokuapp.com/api/cards)
-#### [Chests](https://clash-royale.herokuapp.com/api/chests)
-#### [Players](https://clash-royale.herokuapp.com/api/players)
+#### [Arenas](http://www.clashapi.xyz/api/arenas)
+#### [Cards](http://www.clashapi.xyz/api/cards)
+#### [Chests](http://www.clashapi.xyz/api/chests)
+#### [Players](http://www.clashapi.xyz/api/players)
 
 Also, you can get the information of a specific object:
 
-##### [By id](https://clash-royale.herokuapp.com/api/cards/574de12cc7f71c0f00e4a73a)
-##### [By idName](https://clash-royale.herokuapp.com/api/cards/arrows)
+##### [By id](http://www.clashapi.xyz/api/cards/574de12cc7f71c0f00e4a73a)
+##### [By idName](http://www.clashapi.xyz/api/cards/arrows)
 
 ## Prerequisites
 Make sure you have installed all these prerequisites on your development machine.
