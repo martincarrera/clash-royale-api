@@ -17,6 +17,14 @@ Also, you can get the information of a specific object:
 ##### [By id](http://www.clashapi.xyz/api/cards/574de12cc7f71c0f00e4a73a)
 ##### [By idName](http://www.clashapi.xyz/api/cards/arrows)
 
+## Want to help?
+
+If you like the API, please star this repository.
+
+If you create an app using the API, please mention this repository.
+
+If you want to contribute to the API, feel free to create a pull request.
+
 ## Prerequisites
 Make sure you have installed all these prerequisites on your development machine.
 * [Node.js](https://nodejs.org/en/download/)
