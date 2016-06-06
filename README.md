@@ -17,6 +17,11 @@ Also, you can get the information of a specific object:
 ##### [By id](http://www.clashapi.xyz/api/cards/574de12cc7f71c0f00e4a73a)
 ##### [By idName](http://www.clashapi.xyz/api/cards/arrows)
 
+You can get the images of the cards and arenas too!
+
+#### [Arenas](http://www.clashapi.xyz/images/arenas/royal-arena.png)
+#### [Cards](http://www.clashapi.xyz/images/cards/arrows.png)
+
 ## Want to help?
 
 If you like the API, please star this repository.
