@@ -3,9 +3,34 @@ const Schema = mongoose.Schema;
 
 const CardSchema = new Schema({
 
-  name: {
+  arena: {
+    type: Number,
+    require: true,
+  },
+
+  boost: {
     type: String,
-    unique: true,
+  },
+
+  count: {
+    type: Number,
+  },
+
+  description: {
+    type: String,
+    require: true,
+  },
+
+  deployTime: {
+    type: Number,
+  },
+
+  duration: {
+    type: Number,
+  },
+
+  elixirCost: {
+    type: Number,
     require: true,
   },
 
@@ -15,30 +40,47 @@ const CardSchema = new Schema({
     require: true,
   },
 
+  lifetime: {
+    type: Number,
+  },
+
+  name: {
+    type: String,
+    unique: true,
+    require: true,
+  },
+
+  radius: {
+    type: Number,
+  },
+
+  range: {
+    type: Number,
+  },
+
   rarity: {
     type: String,
     enum: 'Common Rare Epic Legendary'.split(' '),
     require: true,
   },
 
+  spawnSpeed: {
+    type: Number,
+  },
+
+  speed: {
+    type: Number,
+    enum: ['Very Slow', 'Slow', 'Medium', 'Fast', 'Very Fast'],
+  },
+
+  target: {
+    type: String,
+    enum: ['Air', 'Air & Ground', 'Ground', 'Buildings'],
+  },
+
   type: {
     type: String,
     enum: 'Troop Building Spell'.split(' '),
-    require: true,
-  },
-
-  description: {
-    type: String,
-    require: true,
-  },
-
-  arena: {
-    type: Number,
-    require: true,
-  },
-
-  elixirCost: {
-    type: Number,
     require: true,
   },
 
