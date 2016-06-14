@@ -3,6 +3,7 @@ const cardRoute = require('./routes/card-route');
 const chestRoute = require('./routes/chest-route');
 const playerRoute = require('./routes/player-route');
 const userRoute = require('./routes/user-route');
+const randomDeckRouter = require('./routes/random-deck-route');
 const mainRoute = require('./routes/main-route');
 const cmsRoute = require('./routes/cms-route');
 const config = require('./config/config');
@@ -24,5 +25,6 @@ module.exports = (req, res, next) => {
   req.app.use('/api/chests', chestRoute);
   req.app.use('/api/players', playerRoute);
   req.app.use('/api/users', userRoute);
+  req.app.use('/api/random-deck', randomDeckRouter);
   next();
 };
