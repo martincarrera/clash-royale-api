@@ -11,18 +11,17 @@ class CardModel extends Model {
     let currentIndex = array.length;
     let temporaryValue;
     let randomIndex;
-    const newArray = JSON.parse(JSON.stringify(array));
     // While there remain elements to shuffle...
     while (currentIndex !== 0) {
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
       // And swap it with the current element.
-      temporaryValue = newArray[currentIndex];
-      newArray[currentIndex] = newArray[randomIndex];
-      newArray[randomIndex] = temporaryValue;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex]; // eslint-disable-line no-param-reassign
+      array[randomIndex] = temporaryValue; // eslint-disable-line no-param-reassign
     }
-    return newArray;
+    return array;
   }
 }
 
