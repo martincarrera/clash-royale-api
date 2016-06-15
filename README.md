@@ -17,6 +17,10 @@ Also, you can get the information of a specific object:
 ##### [By id](http://www.clashapi.xyz/api/cards/574de12cc7f71c0f00e4a73a)
 ##### [By idName](http://www.clashapi.xyz/api/cards/arrows)
 
+Want to try a random deck? No problem!
+
+##### [Random deck!](http://www.clashapi.xyz/api/random-deck)
+
 You can get the images too!
 
 #### [Arenas](http://www.clashapi.xyz/images/arenas/royal-arena.png)
