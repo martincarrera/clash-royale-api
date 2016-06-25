@@ -36,7 +36,7 @@ If you create an app using the API, please mention this repository.
 
 If you want to contribute to the API, feel free to create a pull request.
 
-If you love :heart: the API, [help me pay the hosting](http://patreon.com/martincarrera)! 
+If you :heart: the API, [help me pay the hosting](http://patreon.com/martincarrera)! 
 
 ## Prerequisites
 Make sure you have installed all these prerequisites on your development machine.
