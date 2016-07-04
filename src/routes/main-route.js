@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
       players: 'api/players',
     },
     version: '1.0.0',
-    lastUpdate: 'June 23 2016',
+    lastUpdate: 'July 04 2016',
   });
 });
 
