@@ -32,7 +32,7 @@ You can get the images too!
 
 If you like the API, please star this repository.
 
-If you create an app using the API, please mention this repository.
+If you create an app using the API, please mention this repository and add it in the table below.
 
 If you want to contribute to the API, feel free to create a pull request.
 
