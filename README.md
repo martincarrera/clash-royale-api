@@ -62,6 +62,14 @@ $ npm run dev
 $ npm test
 ```
 
+## Some apps that use this API
+
+If you create an app and get the information from this API, please submit a pull request and add it to the following table.
+
+| APP | Description | Link |
+|---|---|---|
+| Randeck | Simple web app that generates random decks. | [Go!](http://randeck.xyz) |
+
 Made with :heart: by a clash fan.
 
 ----------
