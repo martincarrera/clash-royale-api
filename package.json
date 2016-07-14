@@ -5,7 +5,9 @@
   "scripts": {
     "test": "istanbul cover node_modules/mocha/bin/_mocha tests/all.js",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "eslint": "eslint src/**/*.js public/js/**/*.js",
+    "precommit": "npm run eslint"
   },
   "engines": {
     "node": "6.1.x",
@@ -35,6 +37,7 @@
     "eslint-plugin-import": "^1.7.0",
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-react": "^5.0.1",
+    "husky": "^0.11.5",
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
     "mockgoose": "^5.3.2",
