@@ -38,7 +38,7 @@ If you want to contribute to the API, feel free to create a pull request.
 
 If you :heart: the API, [help me pay the hosting](http://patreon.com/martincarrera)! 
 
-## Prerequisites
+## Development
 Make sure you have installed all these prerequisites on your development machine.
 * [Node.js](https://nodejs.org/en/download/)
 * [MongoDB](https://www.mongodb.org/)
