@@ -4,29 +4,47 @@
 
 A [Clash Royale](http://supercell.com/en/games/clashroyale/) API that provides information about the game.
 
+> If you develop an app using this API, please submit a pull request adding it to the [apps table](#some-apps-that-use-this-api).
+
 ## How to use?
 
-Get all the information you need from this routes:
+Cunsume the API to get all the information you need from these routes.
 
-#### [Arenas](http://www.clashapi.xyz/api/arenas)
-#### [Cards](http://www.clashapi.xyz/api/cards)
-#### [Chests](http://www.clashapi.xyz/api/chests)
-#### [Players](http://www.clashapi.xyz/api/players)
+[Base route](http://www.clashapi.xyz).
 
-Also, you can get the information of a specific object:
+| Route | HTTP Verb | Description |
+|---|---|---|
+| [`/api/arenas`][1] | `GET` | All Arenas information |
+| `/api/arenas/:id` | `GET` | Single Arena information |
+| `/api/arenas/:idName` | `GET` | Single Arena information |
+| [`/api/cards`][2] | `GET` | All Cards information |
+| `/api/cards/:id` | `GET` | Single Card information |
+| `/api/cards/:idName` | `GET` | Single Card information |
+| [`/api/chests`][3] | `GET` | All Chests information |
+| `/api/chests/:id` | `GET` | Single Chest information |
+| `/api/chests/:idName` | `GET` | Single Chest information |
+| [`/api/players`][4] | `GET` | All Players levels information |
+| `/api/players/:id` | `GET` | Player level information |
+| `/api/players/:idName` | `GET` | Player level information |
+| [`/api/random-deck`][5] | `GET` | Get a Random deck! |
 
-##### [By id](http://www.clashapi.xyz/api/cards/574de12cc7f71c0f00e4a73a)
-##### [By idName](http://www.clashapi.xyz/api/cards/arrows)
-
-Want to try a random deck? No problem!
-
-##### [Random deck!](http://www.clashapi.xyz/api/random-deck)
+[1]: http://www.clashapi.xyz/api/arenas
+[2]: http://www.clashapi.xyz/api/cards
+[3]: http://www.clashapi.xyz/api/chests
+[4]: http://www.clashapi.xyz/api/players
+[5]: http://www.clashapi.xyz/api/random-deck
 
 You can get the images too!
 
-#### [Arenas](http://www.clashapi.xyz/images/arenas/royal-arena.png)
-#### [Cards](http://www.clashapi.xyz/images/cards/arrows.png)
-#### [Chests](http://www.clashapi.xyz/images/chests/super-magical-chest.png)
+| Route | Description |
+|---|---|
+| [`/images/arenas/${idName}.png`][6] | Arenas images |
+| [`/images/cards/${idName}.png`][6] | Cards images |
+| [`/images/chests/${idName}.png`][6] | Chests images |
+
+[6]: http://www.clashapi.xyz/images/arenas/royal-arena.png
+[7]: http://www.clashapi.xyz/images/cards/arrows.png
+[8]: http://www.clashapi.xyz/images/chests/super-magical-chest.png
 
 ## Want to help?
 
@@ -63,8 +81,6 @@ $ npm test
 ```
 
 ## Some apps that use this API
-
-If you create an app and get the information from this API, please submit a pull request and add it to the following table.
 
 | APP | Description | Link |
 |---|---|---|
