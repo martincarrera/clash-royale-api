@@ -39,8 +39,8 @@ You can get the images too!
 | Route | Description |
 |---|---|
 | [`/images/arenas/${idName}.png`][6] | Arenas images |
-| [`/images/cards/${idName}.png`][6] | Cards images |
-| [`/images/chests/${idName}.png`][6] | Chests images |
+| [`/images/cards/${idName}.png`][7] | Cards images |
+| [`/images/chests/${idName}.png`][8] | Chests images |
 
 [6]: http://www.clashapi.xyz/images/arenas/royal-arena.png
 [7]: http://www.clashapi.xyz/images/cards/arrows.png
