@@ -30,6 +30,7 @@ const ChestSchema = new Schema({
     number: { type: Number, require: true },
     minRare: { type: Number, default: 0, require: true },
     minEpic: { type: Number, default: 0, require: true },
+    minLegendary: { type: Number, default: 0, require: true },
   },
 
   gold: {
