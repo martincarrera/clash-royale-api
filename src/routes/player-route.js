@@ -4,7 +4,7 @@ const playerRouter = new Router();
 const player = require('../controllers/player-controller');
 
 playerRouter.route('/')
-  .get(player.find.bind(player))
+  .get(player.findSorted.bind(player))
   .post(player.create.bind(player))
   .put(player.update.bind(player))
   .delete(player.remove.bind(player));

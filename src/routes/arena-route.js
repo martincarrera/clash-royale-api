@@ -3,7 +3,7 @@ const arenaRouter = new Router();
 const arena = require('../controllers/arena-controller');
 
 arenaRouter.route('/')
-  .get(arena.find.bind(arena))
+  .get(arena.findSorted.bind(arena))
   .post(arena.create.bind(arena))
   .put(arena.update.bind(arena))
   .delete(arena.remove.bind(arena));

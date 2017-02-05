@@ -10,6 +10,7 @@ const ChestSchema = new Schema({
     enum: [
       'Wooden Chest', 'Silver Chest', 'Golden Chest', 'Crown Chest',
       'Magical Chest', 'Giant Chest', 'Super Magical Chest',
+      'Epic Chest', 'Legendary Chest',
     ],
     require: true,
   },
@@ -47,6 +48,11 @@ const ChestSchema = new Schema({
   unlock: {
     time: { type: Number, require: true },
     gemCost: { type: Number },
+  },
+
+  order: {
+    type: Number,
+    require: true,
   },
 
 });

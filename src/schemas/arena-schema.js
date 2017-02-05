@@ -52,6 +52,11 @@ const ArenaSchema = new Schema({
     ref: 'Card',
   }],
 
+  order: {
+    type: Number,
+    require: true,
+  },
+
 });
 
 ArenaSchema.pre('save', function preSave(next) {
