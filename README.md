@@ -83,8 +83,9 @@ $ npm test
 ## Some apps that use this API
 
 | APP | Description | Link |
-|---|---|---|
+|:---:|:---:|:---:|
 | Randeck | Simple web app that generates random decks. | [Go!](http://randeck.xyz) |
+| Donate | Website for clash royale clan called Donate. |[Go!](http://donate.kloud51.com/)|
 
 Made with :heart: by a clash fan.
 
