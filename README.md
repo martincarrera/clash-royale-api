@@ -34,7 +34,7 @@ Cunsume the API to get all the information you need from these routes.
 [4]: http://www.clashapi.xyz/api/players
 [5]: http://www.clashapi.xyz/api/random-deck
 
-You can get the images too!
+You can get the images too! Thank you [MaherFa](https://github.com/MaherFa)!
 
 | Route | Description |
 |---|---|
@@ -87,7 +87,7 @@ $ npm test
 | Randeck | Simple web app that generates random decks. | [Go!](http://randeck.xyz) |
 | Donate | Website for clash royale clan called Donate. |[Go!](http://donate.kloud51.com/)|
 
-Made with :heart: by a clash fan.
+Made with :heart: by clash fans.
 
 ----------
 This content is not affiliated with, endorsed, sponsored, or specifically approved by Supercell and Supercell is not responsible for it. For more information see [Supercell’s Fan Content Policy](www.supercell.com/fan-content-policy).
