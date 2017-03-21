@@ -9,13 +9,13 @@ A [Clash Royale](http://supercell.com/en/games/clashroyale/) API that provides i
 ## Content
 
 1. [How to use](#how-to-use)
-  1. [Endpoints](#endpoints)
-  2. [Image](#images)
+    1. [Endpoints](#endpoints)
+    2. [Images](#images)
 2. [Want to help](#want-to-help)
 3. [Development](#development)
-  1. [Install](#install)
-  1. [Run](#run)
-  1. [Test](#test)
+    1. [Install](#install)
+    2. [Run](#run)
+    3. [Test](#test)
 4. [Apps that use this API](#apps-that-use-this-api)
 
 ## How to use?
