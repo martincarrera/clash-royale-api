@@ -1,14 +1,28 @@
-# [Clash Royale API](http://www.clashapi.xyz/) 
+# [Clash Royale API](http://www.clashapi.xyz/)
 [![Codeship Status for martincarrera/clash-royale-api](https://codeship.com/projects/4f412dd0-0006-0134-4d8c-1e95689fe79f/status?branch=master)](https://codeship.com/projects/153028) [![Coverage Status](https://coveralls.io/repos/github/martincarrera/clash-royale-api/badge.svg?branch=master)](https://coveralls.io/github/martincarrera/clash-royale-api?branch=master) [![bitHound Overall Score](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/score.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api) [![bitHound Dependencies](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/dependencies.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/devDependencies.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/code.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api)
 <span class="badge-patreon"><a href="http://patreon.com/martincarrera" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a></span>
 
 A [Clash Royale](http://supercell.com/en/games/clashroyale/) API that provides information about the game.
 
-> If you develop an app using this API, please submit a pull request adding it to the [apps table](#some-apps-that-use-this-api).
+> If you develop an app using this API, please submit a pull request adding it to the [apps table](#apps-that-use-this-api).
+
+## Content
+
+1. [How to use](#how-to-use)
+    1. [Endpoints](#endpoints)
+    2. [Images](#images)
+2. [Want to help](#want-to-help)
+3. [Development](#development)
+    1. [Install](#install)
+    2. [Run](#run)
+    3. [Test](#test)
+4. [Apps that use this API](#apps-that-use-this-api)
 
 ## How to use?
 
-Cunsume the API to get all the information you need from these routes.
+Consume the API to get all the information you need from these routes.
+
+### Endpoints
 
 [Base route](http://www.clashapi.xyz).
 
@@ -34,6 +48,8 @@ Cunsume the API to get all the information you need from these routes.
 [4]: http://www.clashapi.xyz/api/players
 [5]: http://www.clashapi.xyz/api/random-deck
 
+### Images
+
 You can get the images too! Thank you [MaherFa](https://github.com/MaherFa)!
 
 | Route | Description |
@@ -56,33 +72,38 @@ If you create an app using the API, please mention this repository and add it in
 
 If you want to contribute to the API, feel free to create a pull request.
 
-If you :heart: the API, [help me pay the hosting](http://patreon.com/martincarrera)! 
+If you :heart: the API, [help me pay the hosting](http://patreon.com/martincarrera)!
 
 ## Development
+
 Make sure you have installed all these prerequisites on your development machine.
+
 * [Node.js](https://nodejs.org/en/download/)
 * [MongoDB](https://www.mongodb.org/)
 
 ### Install
-```
+
+``` bash
 $ git clone https://github.com/martincarrera/clash-royale-api.git
 $ cd clash-royale-api
 $ npm install
 ```
 
 ### Run
-```
+
+``` bash
 $ mongod
 $ cd clash-royale-api
 $ npm run dev
 ```
 
 ### Test
-```
+
+``` bash
 $ npm test
 ```
 
-## Some apps that use this API
+## Apps that use this API
 
 | APP | Description | Link |
 |:---:|:---:|:---:|

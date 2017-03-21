@@ -15,5 +15,6 @@ module.exports = {
         rare: Math.floor(Math.random() * 5),
       },
   },
+  league: Math.floor(Math.random() * 50),
   suffix
 };

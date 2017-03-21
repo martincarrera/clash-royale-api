@@ -10,7 +10,7 @@ const ChestSchema = new Schema({
     enum: [
       'Wooden Chest', 'Silver Chest', 'Golden Chest', 'Crown Chest',
       'Magical Chest', 'Giant Chest', 'Super Magical Chest',
-      'Epic Chest', 'Legendary Chest',
+      'Epic Chest', 'Legendary Chest', 'Season Reward Chest',
     ],
     require: true,
   },
@@ -25,6 +25,18 @@ const ChestSchema = new Schema({
     type: Number,
     default: 0,
     require: true,
+  },
+
+  league: {
+    type: Number,
+  },
+
+  description: {
+    type: String,
+  },
+
+  numberOfChoices: {
+    type: Number,
   },
 
   cards: {
@@ -57,7 +69,7 @@ const ChestSchema = new Schema({
 
 });
 
-ChestSchema.index({ name: 1, arena: 1 }, { unique: true });
+ChestSchema.index({ name: 1, arena: 1, league: 1 }, { unique: true });
 
 // @TODO Change function to arrow function.
 ChestSchema.pre('save', function preSave(next) {
@@ -69,6 +81,9 @@ ChestSchema.pre('save', function preSave(next) {
     this.idName = this.idName.replace(/ /g, '-');
     this.idName = this.idName.replace(/\./g, '');
     this.idName = this.idName.concat('-', this.arena);
+    if (this.league) {
+      this.idName = this.idName.concat('-', this.league);
+    }
   }
   next();
 });
