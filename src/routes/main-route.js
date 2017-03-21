@@ -10,8 +10,8 @@ router.get('/', (req, res) => {
       chests: 'api/chests',
       players: 'api/players',
     },
-    version: '1.1.0',
-    lastUpdate: 'February 05 2017',
+    version: '1.2.0',
+    lastUpdate: 'March 21 2017',
   });
 });
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ArenaSchema = new Schema({
+const LeagueSchema = new Schema({
 
   number: {
     unique: true,
@@ -31,30 +31,9 @@ const ArenaSchema = new Schema({
     require: true,
   },
 
-  clan: {
-    request: {
-      common: { type: Number, require: true },
-      rare: { type: Number, require: true },
-    },
-    donate: {
-      common: { type: Number, require: true },
-      rare: { type: Number, require: true },
-    },
-  },
-
   chests: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Chest',
-  }],
-
-  cardUnlocks: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Card',
-  }],
-
-  leagues: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'League',
   }],
 
   order: {
@@ -62,9 +41,21 @@ const ArenaSchema = new Schema({
     require: true,
   },
 
+  arena: {
+    type: Number,
+    require: true,
+  },
+
+  leagueSeasonReset: {
+    type: Number,
+  },
+
 });
 
-ArenaSchema.pre('save', function preSave(next) {
+LeagueSchema.index({ arena: 1, number: 1 }, { unique: true });
+
+
+LeagueSchema.pre('save', function preSave(next) {
   if (!this.idName) {
     this.idName = JSON.parse(JSON.stringify(this.name.toLowerCase()));
     this.idName = this.idName.replace(/ /g, '-');
@@ -73,4 +64,4 @@ ArenaSchema.pre('save', function preSave(next) {
   next();
 });
 
-module.exports = mongoose.model('Arena', ArenaSchema);
+module.exports = mongoose.model('League', LeagueSchema);

@@ -191,7 +191,21 @@ describe('Cards.', function () {
           });
       });
 
-      it('should try to delete an invalid card', done => {
+      describe('Random deck', () => {
+        it('should get a random deck of cards', done => {
+          request(app)
+            .get('/api/random-deck')
+            .set('Authorization', token)
+            .expect('Content-Type', /json/)
+            .end((err, res) => {
+              res.status.should.eql(200);
+              res.body.should.not.be.empty();
+              done();
+            });
+        });
+      });
+
+      it('should try to update an invalid card', done => {
         updatedCard._id = '111111111111111111111111';
         request(app)
           .put('/api/cards/' + updatedCard._id)
@@ -209,7 +223,7 @@ describe('Cards.', function () {
     describe('DELETE /', () => {
       it('should delete a card', done => {
         request(app)
-        .delete('/api/cards/' + newCard._id)
+          .del('/api/cards/' + newCard._id)
           .set('Accept', 'application/json')
           .set('Authorization', token)
           .expect('Content-Type', /json/)
@@ -223,7 +237,7 @@ describe('Cards.', function () {
     describe('DELETE /', () => {
       it('should try to delete an invalid card', done => {
         request(app)
-          .delete('/api/cards/' + newCard._id)
+          .del('/api/cards/' + newCard._id)
           .set('Accept', 'application/json')
           .set('Authorization', token)
           .expect('Content-Type', /json/)
@@ -235,4 +249,5 @@ describe('Cards.', function () {
     });
 
   });
+
 });
