@@ -58,15 +58,15 @@ You can get the images too! Thank you [MaherFa](https://github.com/MaherFa)!
 
 | Route | Description |
 |---|---|
-| [`/images/arenas/${idName}.png`][6] | Arenas images |
-| [`/images/cards/${idName}.png`][7] | Cards images |
-| [`/images/chests/${idName}.png`][8] | Chests images |
-| [`/images/leagues/${idName}.png`][9] | Leagues images |
+| [`/images/arenas/${idName}.png`][7] | Arenas images |
+| [`/images/cards/${idName}.png`][8] | Cards images |
+| [`/images/chests/${idName}.png`][9] | Chests images |
+| [`/images/leagues/${idName}.png`][10] | Leagues images |
 
-[6]: http://www.clashapi.xyz/images/arenas/royal-arena.png
-[7]: http://www.clashapi.xyz/images/cards/arrows.png
-[8]: http://www.clashapi.xyz/images/chests/super-magical-chest.png
-[9]: http://www.clashapi.xyz/images/leagues/ultimate-champion.png
+[7]: http://www.clashapi.xyz/images/arenas/royal-arena.png
+[8]: http://www.clashapi.xyz/images/cards/arrows.png
+[9]: http://www.clashapi.xyz/images/chests/super-magical-chest.png
+[10]: http://www.clashapi.xyz/images/leagues/ultimate-champion.png
 
 ## Want to help?
 
