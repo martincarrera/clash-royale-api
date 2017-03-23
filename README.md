@@ -37,16 +37,20 @@ Consume the API to get all the information you need from these routes.
 | [`/api/chests`][3] | `GET` | All Chests information |
 | `/api/chests/:id` | `GET` | Single Chest information |
 | `/api/chests/:idName` | `GET` | Single Chest information |
-| [`/api/players`][4] | `GET` | All Players levels information |
+| [`/api/leagues`][4] | `GET` | All Leagues information |
+| `/api/leagues/:id` | `GET` | Single League information |
+| `/api/leagues/:idName` | `GET` | Single League information |
+| [`/api/players`][5] | `GET` | All Players levels information |
 | `/api/players/:id` | `GET` | Player level information |
 | `/api/players/:idName` | `GET` | Player level information |
-| [`/api/random-deck`][5] | `GET` | Get a Random deck! |
+| [`/api/random-deck`][6] | `GET` | Get a Random deck! |
 
 [1]: http://www.clashapi.xyz/api/arenas
 [2]: http://www.clashapi.xyz/api/cards
 [3]: http://www.clashapi.xyz/api/chests
-[4]: http://www.clashapi.xyz/api/players
-[5]: http://www.clashapi.xyz/api/random-deck
+[4]: http://www.clashapi.xyz/api/leagues
+[5]: http://www.clashapi.xyz/api/players
+[6]: http://www.clashapi.xyz/api/random-deck
 
 ### Images
 
@@ -109,7 +113,7 @@ $ npm test
 |:---:|:---:|:---:|
 | Randeck | Simple web app that generates random decks. | [Go!](http://randeck.xyz) |
 | Donate | Website for clash royale clan called Donate. |[Go!](http://donate.kloud51.com/)|
-| BarrePolice | A Telegram bot working with plugins written in Lua. |[Go!](https:/t.me/BarrePolice_Bot) _& send /cr_|
+| BarrePolice | A Telegram Bot based on plugins written in Lua |[Go!](https://t.me/BarrePolice_Bot) _& send /cr_ |
 
 Made with :heart: by clash fans.
 
