@@ -114,6 +114,7 @@ $ npm test
 | Randeck | Simple web app that generates random decks. | [Go!](http://randeck.xyz) |
 | Donate | Website for clash royale clan called Donate. |[Go!](http://donate.kloud51.com/)|
 | BarrePolice | A Telegram Bot based on plugins written in Lua |[Go!](https://t.me/BarrePolice_Bot) _& send /cr_ |
+| Clashapi | NPM package to consume this API | [Go!](https://www.npmjs.com/package/clashapi) |
 
 Made with :heart: by clash fans.
 
