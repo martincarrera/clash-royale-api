@@ -84,6 +84,7 @@ Make sure you have installed all these prerequisites on your development machine
 
 * [Node.js](https://nodejs.org/en/download/)
 * [MongoDB](https://www.mongodb.org/)
+* [Nodemon](https://nodemon.io/)
 
 ### Install
 
@@ -98,6 +99,15 @@ $ npm install
 ``` bash
 $ mongod
 $ cd clash-royale-api
+$ npm run dev
+```
+
+If you don't have `Nodemon` installed
+
+``` bash
+$ mongod
+$ cd clash-royale-api
+$ npm i -g nodemon
 $ npm run dev
 ```
 
