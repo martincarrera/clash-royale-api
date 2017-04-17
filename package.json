@@ -7,7 +7,8 @@
     "dev": "nodemon server.js",
     "start": "node server.js",
     "eslint": "eslint src/**/*.js public/js/**/*.js",
-    "precommit": "npm run eslint"
+    "precommit": "npm run eslint",
+    "postinstall": "node_modules/.bin/bower install"
   },
   "engines": {
     "node": "6.1.x",
@@ -29,6 +30,7 @@
     "morgan": "^1.7.0"
   },
   "devDependencies": {
+    "bower": "^1.8.0",
     "coveralls": "^2.11.9",
     "eslint": "^2.9.0",
     "eslint-config-airbnb": "^9.0.1",
