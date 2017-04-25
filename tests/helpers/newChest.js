@@ -6,17 +6,17 @@ module.exports = {
   arena: Math.floor(Math.random() * 9),
   cards: {
     number: Math.floor(Math.random() * 500),
-    minRare: Math.floor(Math.random() * 50),
-    minEpic: Math.floor(Math.random() * 5),
+    minRare: Math.floor(Math.random() * 500),
+    minEpic: Math.floor(Math.random() * 500),
   },
   gold: {
-    min: Math.floor(Math.random() * 50),
-    max: (Math.floor(Math.random() * 50) + 50),
+    min: Math.floor(Math.random() * 500),
+    max: (Math.floor(Math.random() * 500) + 500),
   },
-  elixirCost: Math.floor(Math.random() * 10),
-  gemCost: Math.floor(Math.random() * 5000),
+  elixirCost: Math.floor(Math.random() * 1000),
+  gemCost: Math.floor(Math.random() * 50000000),
   unlock: {
-    time: Math.floor(Math.random() * 1000),
+    time: Math.floor(Math.random() * 50),
   },
   suffix
 };
