@@ -52,6 +52,16 @@ const ArenaSchema = new Schema({
     ref: 'Card',
   }],
 
+  leagues: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'League',
+  }],
+
+  order: {
+    type: Number,
+    require: true,
+  },
+
 });
 
 ArenaSchema.pre('save', function preSave(next) {

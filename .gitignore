@@ -35,3 +35,8 @@ node_modules
 
 # Environmental variables
 .env
+
+# Bower Components
+public/bower_components/
+
+.DS_Store

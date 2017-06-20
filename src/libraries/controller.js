@@ -10,6 +10,15 @@ class Controller {
     .catch(err => next(err));
   }
 
+  findSorted(req, res, next) {
+    this.model.find(req.query)
+    .then(collection => {
+      collection.sort((a, b) => a.order - b.order);
+      res.status(200).json(collection);
+    })
+    .catch(err => next(err));
+  }
+
   findByIdOrNameId(req, res, next) {
     const id = req.params.id;
     if (this.isValidObjectID(id)) {

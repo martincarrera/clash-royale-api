@@ -6,8 +6,9 @@
     "test": "istanbul cover node_modules/mocha/bin/_mocha tests/all.js",
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "eslint": "eslint src/**/*.js cms/js/**/*.js",
-    "precommit": "npm run eslint"
+    "eslint": "eslint src/**/*.js public/js/**/*.js cms/js/**/*.js",
+    "precommit": "npm run eslint",
+    "postinstall": "node_modules/.bin/bower install"
   },
   "engines": {
     "node": "6.1.x",
@@ -21,6 +22,7 @@
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.3.5",
     "body-parser": "^1.15.0",
+    "bower": "^1.8.0",
     "dotenv": "^2.0.0",
     "express": "^4.13.4",
     "jsonwebtoken": "^7.0.0",

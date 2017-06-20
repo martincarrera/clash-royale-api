@@ -42,6 +42,11 @@ const CardSchema = new Schema({
     require: true,
   },
 
+  order: {
+    type: Number,
+    require: true,
+  },
+
 });
 
 CardSchema.pre('save', function preSave(next) {

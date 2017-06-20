@@ -3,7 +3,7 @@ const cardRouter = new Router();
 const card = require('../controllers/card-controller');
 
 cardRouter.route('/')
-  .get(card.find.bind(card))
+  .get(card.findSorted.bind(card))
   .post(card.create.bind(card))
   .put(card.update.bind(card))
   .delete(card.remove.bind(card));

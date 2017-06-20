@@ -21,6 +21,15 @@ describe('Chests.', function () {
     });
   });
 
+  afterEach(function() {
+    request(app)
+      .del('/api/chests/' + newChest._id)
+      .set('Accept', 'application/json')
+      .set('Authorization', token)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {});
+  });
+
   it('should create a new Chest', done => {
     request(app)
       .post('/api/chests')
@@ -30,8 +39,25 @@ describe('Chests.', function () {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         res.status.should.eql(201);
+        newChest._id = res.body._id;
         done();
       });
   });
+
+  it('should create a new Chest with league', done => {
+    newChest.league = Math.floor(Math.random() * 9);
+    request(app)
+      .post('/api/chests')
+      .set('Accept', 'application/json')
+      .set('Authorization', token)
+      .send(newChest)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        res.status.should.eql(201);
+        newChest._id = res.body._id;
+        done();
+      });
+  });
+
 
 });

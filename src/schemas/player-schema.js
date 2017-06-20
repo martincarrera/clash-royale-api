@@ -34,6 +34,11 @@ const PlayerSchema = new Schema({
     require: true,
   },
 
+  order: {
+    type: Number,
+    require: true,
+  },
+
 });
 
 PlayerSchema.pre('save', function preSave(next) {
