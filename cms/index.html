@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title>Clash Royale CMS</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/ng-notify/dist/ng-notify.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/api-check/dist/api-check.min.js"></script>
+    <script src="bower_components/angular-formly/dist/formly.min.js"></script>
+    <script src="bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.min.js"></script>
+    <script src="bower_components/ng-notify/dist/ng-notify.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/routes.js"></script>
+
+    <script src="js/controllers/ArenasController.js"></script>
+    <script src="js/controllers/CardsController.js"></script>
+    <script src="js/controllers/ChestsController.js"></script>
+    <script src="js/controllers/PlayersController.js"></script>
+    <script src="js/controllers/LoginController.js"></script>
+
+    <script src="js/services/ArenasService.js"></script>
+    <script src="js/services/CardsService.js"></script>
+    <script src="js/services/ChestsService.js"></script>
+    <script src="js/services/PlayersService.js"></script>
+    <script src="js/services/LoginService.js"></script>
+
+    <script src="js/interceptors/AuthInterceptor.js"></script>
+
+  </head>
+  <body ng-app="clash-royale-api">
+    <div ui-view></div>
+  </body>
+</html>

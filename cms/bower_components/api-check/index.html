@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>apiCheck.js</title>
+</head>
+<body>
+This page is for manual testing of apiCheck.js. Just to give a little human aspect to developing the library :-)
+<script src="dist/api-check.js"></script>
+<script>
+
+  // just... yeah...
+  function require() {
+    return apiCheck;
+  }
+
+  // From README
+
+  var myApiCheck = require('api-check')({
+    /* config options */
+    output: {
+      prefix: 'app/lib Name',
+      suffix: 'Good luck!',
+      docsBaseUrl: 'http://www.example.com/error-docs#'
+    },
+    verbose: false
+  }, {
+    /* custom checkers if you wanna */
+  });
+
+  // given we have a function like this:
+  function foo(bar, foobar) {
+    // we can define our api as the first argument to myApiCheck.warn
+    myApiCheck.warn([myApiCheck.number, myApiCheck.arrayOf(myApiCheck.string)], arguments);
+    // do stuff
+  }
+  // the function above can be called like so:
+  foo(3, ['a','b','c']);
+
+  // if it were called like so, a descriptive warning would be logged to the console
+  foo('whatever', false);
+
+
+  // here's something a little more complex (this is what's in the screenshot and [the demo](http://jsbin.com/hibocu/edit?js,console,output))
+  var myCheck = require('api-check')({
+    output: {
+      prefix: 'myApp',
+      suffix: 'see docs -->',
+      docsBaseUrl: 'http://example.com/error-descriptions#'
+    }
+  });
+  function doSomething(person, options, callback) {
+    myCheck.warn([ // you can also do myCheck.throw to throw an exception
+      myCheck.shape({
+        name: myCheck.shape({
+          first: myCheck.string,
+          last: myCheck.string
+        }),
+        age: myCheck.number,
+        isOld: myCheck.bool,
+        walk: myCheck.func,
+        ipAddress: function(val, name, location) {
+          if (!/(\d{1,3}\.){3}\d{1,3}/.test(val)) {
+            return myCheck.utils.getError(name, location, 'ipAddress');
+          }
+        },
+        childrenNames: myCheck.arrayOf(myCheck.string).optional
+      }),
+      myCheck.any.optional,
+      myCheck.func
+    ], arguments, {
+      prefix: 'doSomething',
+      suffix: 'Good luck!',
+      urlSuffix: 'dosomething-api-check-failure'
+    });
+
+    // do stuff
+  }
+
+  var person = {
+    name: {
+      first: 'Matt',
+      last: 'Meese'
+    },
+    age: 27,
+    isOld: false,
+    ipAddress: '127.0.0.1',
+    walk: function() {}
+  };
+  function callback() {}
+  var options = 'whatever I want because it is an "any" type';
+
+  console.log('Successful call');
+  doSomething(person, options, callback);
+
+  console.log('Successful call (without options)');
+  doSomething(person, callback); // <-- options is optional
+
+  console.log('Failed call (without person)');
+  doSomething(callback); // <-- this would fail because person is not optional
+
+  person.ipAddress = 'Invalid IP Address!!!';
+
+  console.log('Failed call (invalid ip address)');
+  doSomething(person, options, callback); // <-- this would fail because the ipAddress checker would fail
+
+  // if you only wish to check the first argument to a function, you don't need to supply an array.
+
+  var libCheck = apiCheck(); // you don't HAVE to pass anything if you don't want to.
+  function bar(a) {
+    var errorMessage = libCheck(apiCheck.string, arguments);
+    if (!errorMessage) {
+      // success
+    } else if (typeof errorMessage === 'string') {
+      // there was a problem and errorMessage would like to tell you about it
+    }
+  }
+  bar('hello!'); // <-- success!
+
+
+
+  // Further down in README
+
+  var myCheck2 = require('api-check')({
+    output: {prefix: 'myCheck2'}
+  });
+
+  function ipAddressChecker(val, name, location) {
+    if (!/(\d{1,3}\.){3}\d{1,3}/.test(val)) {
+      return apiCheck.utils.getError(name, location, ipAddressChecker.type);
+    }
+  }
+  ipAddressChecker.type = 'ipAddressString';
+
+  function foo2(string, ipAddress) {
+    myCheck2.warn([
+      myCheck2.string,
+      ipAddressChecker
+    ], arguments);
+  }
+
+
+  foo2('hello', 'not-an-ip-address');
+
+
+</script>
+</body>
+</html>

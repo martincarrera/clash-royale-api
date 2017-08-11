@@ -6,7 +6,7 @@
     "test": "istanbul cover node_modules/mocha/bin/_mocha tests/all.js",
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "eslint": "eslint src/**/*.js public/js/**/*.js",
+    "eslint": "eslint src/**/*.js public/js/**/*.js cms/js/**/*.js",
     "precommit": "npm run eslint",
     "postinstall": "node_modules/.bin/bower install"
   },

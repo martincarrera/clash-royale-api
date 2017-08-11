@@ -1,19 +1,10 @@
-const Router = require('express').Router;
+const express = require('express');
+const Router = express.Router;
 const router = new Router();
+const path = require('path');
 
 router.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to Clash Royale API!',
-    endpoints: {
-      arenas: 'api/arenas',
-      cards: 'api/cards',
-      chests: 'api/chests',
-      players: 'api/players',
-      leagues: 'api/leagues',
-    },
-    version: '1.2.0',
-    lastUpdate: 'March 21 2017',
-  });
+  res.sendFile(path.join(__dirname, '../../public', 'index.html'));
 });
 
 module.exports = router;
