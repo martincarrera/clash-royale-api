@@ -1,0 +1,8 @@
+{
+  "name": "clashapi",
+  "alias": [
+    "clashapi.now.sh"
+  ],
+  "type": "npm",
+  "public": false
+}
