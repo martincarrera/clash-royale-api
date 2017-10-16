@@ -10,6 +10,10 @@
     "precommit": "npm run eslint",
     "postinstall": "node_modules/.bin/bower install"
   },
+  "engines": {
+  "node": "8.6.x",
+  "npm": "5.3.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/martincarrera/clash-royale-api.git"
