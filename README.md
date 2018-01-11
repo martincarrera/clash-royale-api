@@ -1,6 +1,6 @@
 # [Clash Royale API](http://www.clashapi.xyz/)
 [![Codeship Status for martincarrera/clash-royale-api](https://codeship.com/projects/4f412dd0-0006-0134-4d8c-1e95689fe79f/status?branch=master)](https://codeship.com/projects/153028) [![Coverage Status](https://coveralls.io/repos/github/martincarrera/clash-royale-api/badge.svg?branch=master)](https://coveralls.io/github/martincarrera/clash-royale-api?branch=master) [![bitHound Overall Score](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/score.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api) [![bitHound Dependencies](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/dependencies.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/devDependencies.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/code.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api)
-<span class="badge-patreon"><a href="http://patreon.com/martincarrera" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a></span>
+[![donate paypal](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/MartinCarrera)
 
 A [Clash Royale](http://supercell.com/en/games/clashroyale/) API that provides information about the game.
 
@@ -76,7 +76,7 @@ If you create an app using the API, please mention this repository and add it in
 
 If you want to contribute to the API, feel free to create a pull request.
 
-If you :heart: the API, [help me pay the hosting](http://patreon.com/martincarrera)!
+If you :heart: the API, [help me pay the hosting](https://www.paypal.me/MartinCarrera)!
 
 ## Development
 
