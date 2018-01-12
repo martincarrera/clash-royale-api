@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
       players: 'api/players',
       leagues: 'api/leagues',
     },
-    version: '1.3.0',
-    lastUpdate: 'October 12 2017',
+    version: '1.4.0',
+    lastUpdate: 'January 12 2018',
   });
 });
 
