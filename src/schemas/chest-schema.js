@@ -45,6 +45,10 @@ const ChestSchema = new Schema({
     type: String,
   },
 
+  information: {
+    type: String,
+  },
+
   numberOfChoices: {
     type: Number,
   },
