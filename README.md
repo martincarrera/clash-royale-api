@@ -127,6 +127,7 @@ $ npm test
 | Clashapi | NPM package to consume this API | [Go!](https://www.npmjs.com/package/clashapi) |
 | Deck it | Deck builder app designed for Android | [Go!](https://play.google.com/store/apps/details?id=com.oryginal.deckit) |
 | Deck Generator for Echo Devices | Alexa skill to suggest a deck for clash royale for Amazon's Echo devices | [Go!](https://alexa.amazon.in/spa/index.html#skills/dp/B078WSRZWV/?ref=skill_dsk_skb_ca_24) |
+| Clash Royale Discord Bot | A Discord bot that displays informations depending of commands | [Go!](https://github.com/TorzuoliH/clash-royale-discord-bot) |
 
 
 Made with :heart: by clash fans.
