@@ -1,4 +1,5 @@
 # [Clash Royale API](http://www.clashapi.xyz/)
+
 [![Codeship Status for martincarrera/clash-royale-api](https://codeship.com/projects/4f412dd0-0006-0134-4d8c-1e95689fe79f/status?branch=master)](https://codeship.com/projects/153028) [![Coverage Status](https://coveralls.io/repos/github/martincarrera/clash-royale-api/badge.svg?branch=master)](https://coveralls.io/github/martincarrera/clash-royale-api?branch=master) [![bitHound Overall Score](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/score.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api) [![bitHound Dependencies](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/dependencies.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/devDependencies.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/martincarrera/clash-royale-api/badges/code.svg)](https://www.bithound.io/github/martincarrera/clash-royale-api)
 [![donate paypal](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/MartinCarrera)
 
@@ -18,7 +19,7 @@ A [Clash Royale](http://supercell.com/en/games/clashroyale/) API that provides i
     3. [Test](#test)
 4. [Apps that use this API](#apps-that-use-this-api)
 
-## How to use?
+## How to use
 
 Consume the API to get all the information you need from these routes.
 
@@ -68,7 +69,7 @@ You can get the images too! Thank you [MaherFa](https://github.com/MaherFa)!
 [9]: http://www.clashapi.xyz/images/chests/super-magical-chest.png
 [10]: http://www.clashapi.xyz/images/leagues/ultimate-champion.png
 
-## Want to help?
+## Want to help
 
 If you like the API, please star this repository.
 
@@ -88,48 +89,47 @@ Make sure you have installed all these prerequisites on your development machine
 
 ### Install
 
-``` bash
-$ git clone https://github.com/martincarrera/clash-royale-api.git
-$ cd clash-royale-api
-$ npm install
+```bash
+> git clone https://github.com/martincarrera/clash-royale-api.git
+> cd clash-royale-api
+> npm install
 ```
 
 ### Run
 
-``` bash
-$ mongod
-$ cd clash-royale-api
-$ npm run dev
+```bash
+> mongod
+> cd clash-royale-api
+> npm run dev
 ```
 
 If you don't have `Nodemon` installed
 
-``` bash
-$ mongod
-$ cd clash-royale-api
-$ npm i -g nodemon
-$ npm run dev
+```bash
+> mongod
+> cd clash-royale-api
+> npm i -g nodemon
+> npm run dev
 ```
 
 ### Test
 
-``` bash
-$ npm test
+```bash
+> npm test
 ```
 
 ## Apps that use this API
 
-| APP | Description | Link |
+| APP | DESCRIPTION | LINK |
 |:---:|:---:|:---:|
 | Randeck | Simple web app that generates random decks. | [Go!](http://randeck.xyz) |
-| Donate | Website for clash royale clan called Donate. |[Go!](http://donate.kloud51.com/)|
+| Royale Plus | Facebook for Clash Royale players. | [Git!](https://github.com/AmirSavand/royale-plus) [Go!](http://royplus.herokuapp.com/)|
 | BarrePolice | A Telegram Bot based on plugins written in Lua |[Go!](https://t.me/BarrePolice_Bot) _& send /cr_ |
 | Clashapi | NPM package to consume this API | [Go!](https://www.npmjs.com/package/clashapi) |
 | Deck it | Deck builder app designed for Android | [Go!](https://play.google.com/store/apps/details?id=com.oryginal.deckit) |
 | Deck Generator for Echo Devices | Alexa skill to suggest a deck for clash royale for Amazon's Echo devices | [Go!](https://alexa.amazon.in/spa/index.html#skills/dp/B078WSRZWV/?ref=skill_dsk_skb_ca_24) |
-| Clash Royale Discord Bot | A Discord bot that displays informations depending of commands | [Go!](https://github.com/TorzuoliH/clash-royale-discord-bot) |
+| Clash Royale Discord Bot | A Discord bot that displays informations depending of commands | [Go!](https://github.com/TorzuoliH/clash-royale-discord-bot) |
 | Deck Royale | A SPA using Vue that generates random decks. | [Git!](https://github.com/ikenami/Deck-Royale) [Go!](http://deck-royale-ultimate.herokuapp.com/) |
-
 
 Made with :heart: by clash fans.
 
