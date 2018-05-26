@@ -47,6 +47,11 @@ const CardSchema = new Schema({
     require: true,
   },
 
+  copyId: {
+    type: Number,
+    require: true,
+  },
+
 });
 
 CardSchema.pre('save', function preSave(next) {
